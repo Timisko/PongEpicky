@@ -30,7 +30,7 @@ public class Controller {
 
     public void herneOkno(ActionEvent actionEvent) throws IOException {
         Parent GameWindow = FXMLLoader.load(getClass().getResource("game.fxml"));
-        Scene GameWindowScene = new Scene(GameWindow);
+        Scene GameWindowScene = new Scene(GameWindow, 800, 600);
 
         Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
 
@@ -40,7 +40,7 @@ public class Controller {
 
     public void obchodOkno(ActionEvent actionEvent) throws IOException {
         Parent GameWindowShop = FXMLLoader.load(getClass().getResource("shop.fxml"));
-        Scene GameWindowSceneShop = new Scene(GameWindowShop);
+        Scene GameWindowSceneShop = new Scene(GameWindowShop, 800, 600);
 
         Stage windowShop = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
 
