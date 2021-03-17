@@ -2,11 +2,17 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.io.InputStream;
 
 public class Controller {
@@ -22,7 +28,14 @@ public class Controller {
     }
 
 
-    public void herneOkno(ActionEvent actionEvent) {
+    public void herneOkno(ActionEvent actionEvent) throws IOException {
+        Parent GameWindow = FXMLLoader.load(getClass().getResource("game.fxml"));
+        Scene GameWindowScene = new Scene(GameWindow);
+
+        Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+
+        window.setScene(GameWindowScene);
+        window.show();
     }
 
     public void obchodOkno(ActionEvent actionEvent) {
