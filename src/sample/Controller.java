@@ -38,7 +38,14 @@ public class Controller {
         window.show();
     }
 
-    public void obchodOkno(ActionEvent actionEvent) {
+    public void obchodOkno(ActionEvent actionEvent) throws IOException {
+        Parent GameWindowShop = FXMLLoader.load(getClass().getResource("shop.fxml"));
+        Scene GameWindowSceneShop = new Scene(GameWindowShop);
+
+        Stage windowShop = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+
+        windowShop.setScene(GameWindowSceneShop);
+        windowShop.show();
     }
 
     public void exit(ActionEvent actionEvent) {

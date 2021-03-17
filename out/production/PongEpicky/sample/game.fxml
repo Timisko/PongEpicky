@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
+<?import javafx.scene.shape.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Game">
    <children>
-      <Button layoutX="274.0" layoutY="188.0" mnemonicParsing="false" text="jses negr" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="54.0" layoutX="14.0" layoutY="173.0" stroke="BLACK" strokeType="INSIDE" width="9.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="54.0" layoutX="577.0" layoutY="173.0" stroke="BLACK" strokeType="INSIDE" width="9.0" />
+      <Circle fill="DODGERBLUE" layoutX="300.0" layoutY="200.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>
