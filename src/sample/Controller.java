@@ -29,13 +29,14 @@ public class Controller {
 
 
     public void herneOkno(ActionEvent actionEvent) throws IOException {
-        Parent GameWindow = FXMLLoader.load(getClass().getResource("game.fxml"));
-        Scene GameWindowScene = new Scene(GameWindow, 800, 600);
+        Parent GameWindowShop = FXMLLoader.load(getClass().getResource("game.fxml"));
+        Scene GameWindowSceneShop = new Scene(GameWindowShop, 800, 600);
 
-        Stage window = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        Stage windowShop = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
 
-        window.setScene(GameWindowScene);
-        window.show();
+        windowShop.setScene(GameWindowSceneShop);
+        windowShop.show();
+
     }
 
     public void obchodOkno(ActionEvent actionEvent) throws IOException {
