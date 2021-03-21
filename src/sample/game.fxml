@@ -5,8 +5,8 @@
 
 <AnchorPane id="panel" fx:id="panel" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Game">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="54.0" layoutX="9.0" layoutY="273.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="54.0" layoutX="780.0" layoutY="273.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
+      <Rectangle id="Left" fx:id="Left" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="10.0" layoutY="275.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
+      <Rectangle id="Right" fx:id="Right" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="780.0" layoutY="275.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
       <Circle id="lopta" fx:id="lopta" fill="DODGERBLUE" layoutX="400.0" layoutY="300.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>
