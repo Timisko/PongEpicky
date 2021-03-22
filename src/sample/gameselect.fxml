@@ -28,7 +28,7 @@
             <Font name="Comic Sans MS" size="25.0" />
          </font>
       </Text>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="24.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="24.0" layoutY="26.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@res/back.png" />
          </image>
