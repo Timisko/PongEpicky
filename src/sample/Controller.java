@@ -29,12 +29,12 @@ public class Controller {
 
 
     public void herneOkno(ActionEvent actionEvent) throws IOException {
-        Parent GameWindowShop = FXMLLoader.load(getClass().getResource("game.fxml"));
-        Scene GameWindowSceneShop = new Scene(GameWindowShop, 800, 600);
+        Parent GameSelectWindow = FXMLLoader.load(getClass().getResource("gameselect.fxml"));
+        Scene GameSelectScene = new Scene(GameSelectWindow, 800, 600);
 
         Stage windowShop = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
 
-        windowShop.setScene(GameWindowSceneShop);
+        windowShop.setScene(GameSelectScene);
         windowShop.show();
 
     }
@@ -55,13 +55,13 @@ public class Controller {
 
     public void zmenZvuk(MouseEvent mouseEvent) {
         if (i == 0){
-            InputStream inStream = getClass().getResourceAsStream("soundoff.png");
+            InputStream inStream = getClass().getResourceAsStream("res/soundoff.png");
             Image imageObject = new Image(inStream);
             zvuk.setImage(imageObject);
             i = 1;
         }
         else {
-            InputStream inStream = getClass().getResourceAsStream("soundon.png");
+            InputStream inStream = getClass().getResourceAsStream("res/soundon.png");
             Image imageObject = new Image(inStream);
             zvuk.setImage(imageObject);
             i = 0;
