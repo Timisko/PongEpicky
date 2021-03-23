@@ -4,6 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <BorderPane id="menu" fx:id="menu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <center>
@@ -14,15 +15,24 @@
                     <Button mnemonicParsing="false" onAction="#herneOkno" prefHeight="60.0" prefWidth="300.0" text="Hrať">
                         <VBox.margin>
                             <Insets left="50.0" top="20.0" />
-                        </VBox.margin></Button>
+                        </VBox.margin>
+                     <font>
+                        <Font name="Comic Sans MS" size="20.0" />
+                     </font></Button>
                     <Button mnemonicParsing="false" onAction="#obchodOkno" prefHeight="60.0" prefWidth="300.0" text="Obchod">
                         <VBox.margin>
                             <Insets left="50.0" top="20.0" />
-                        </VBox.margin></Button>
+                        </VBox.margin>
+                     <font>
+                        <Font name="Comic Sans MS" size="20.0" />
+                     </font></Button>
                     <Button mnemonicParsing="false" onAction="#exit" prefHeight="60.0" prefWidth="300.0" text="Koniec">
                         <VBox.margin>
                             <Insets left="50.0" top="20.0" />
-                        </VBox.margin></Button>
+                        </VBox.margin>
+                     <font>
+                        <Font name="Comic Sans MS" size="20.0" />
+                     </font></Button>
                </children>
             </VBox>
          </children>
@@ -31,7 +41,7 @@
    <top>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="300.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="158.0" fitWidth="279.0" layoutX="266.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@res/pongLogo.png" />
                </image>
@@ -45,7 +55,7 @@
                <image>
                   <Image url="@res/soundon.png" />
                </image></ImageView>
-            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="710.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="710.0" layoutY="70.0" onMouseClicked="#infoOkno" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@res/info.png" />
                </image>

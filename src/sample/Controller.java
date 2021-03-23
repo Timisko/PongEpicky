@@ -24,7 +24,7 @@ public class Controller {
 
     @FXML
     private void initialize(){
-        biela = "ffffffff";
+        biela = "ffffff";
         menu.setStyle("-fx-background-color: #" + biela);
     }
 
@@ -33,11 +33,10 @@ public class Controller {
         Parent GameSelectWindow = FXMLLoader.load(getClass().getResource("gameselect.fxml"));
         Scene GameSelectScene = new Scene(GameSelectWindow, 800, 600);
 
-        Stage windowShop = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        Stage windowGameSelect = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
 
-        windowShop.setScene(GameSelectScene);
-        windowShop.show();
-
+        windowGameSelect.setScene(GameSelectScene);
+        windowGameSelect.show();
     }
 
     public void obchodOkno(ActionEvent actionEvent) throws IOException {
@@ -67,5 +66,15 @@ public class Controller {
             zvuk.setImage(imageObject);
             i = 0;
         }
+    }
+
+    public void infoOkno(MouseEvent mouseEvent) throws IOException {
+        Parent menuWindow = FXMLLoader.load(getClass().getResource("info.fxml"));
+        Scene menuScene = new Scene(menuWindow, 800, 600);
+
+        Stage windowMenu = (Stage) ((Node)mouseEvent.getSource()).getScene().getWindow();
+
+        windowMenu.setScene(menuScene);
+        windowMenu.show();
     }
 }

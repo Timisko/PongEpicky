@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GameSelect">
    <children>
-      <ImageView fitHeight="300.0" fitWidth="500.0" layoutX="24.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="300.0" fitWidth="500.0" layoutX="24.0" layoutY="150.0" onMouseClicked="#startBotGame" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@res/robot.png" />
          </image></ImageView>
@@ -18,12 +18,12 @@
          <font>
             <Font name="Comic Sans MS" size="40.0" />
          </font></Text>
-      <Text layoutX="78.0" layoutY="499.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hra s počítačom" textAlignment="CENTER">
+      <Text layoutX="78.0" layoutY="500.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hra s počítačom" textAlignment="CENTER">
          <font>
             <Font name="Comic Sans MS" size="25.0" />
          </font>
       </Text>
-      <Text layoutX="500.0" layoutY="498.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hra pre dvoch hráčov" textAlignment="CENTER">
+      <Text layoutX="500.0" layoutY="500.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hra pre dvoch hráčov" textAlignment="CENTER">
          <font>
             <Font name="Comic Sans MS" size="25.0" />
          </font>

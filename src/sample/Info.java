@@ -9,21 +9,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class GameSelect {
-
+public class Info {
     public void back(MouseEvent mouseEvent) throws IOException {
         Parent menuWindow = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        Scene menuScene = new Scene(menuWindow, 800, 600);
-
-        Stage windowMenu = (Stage) ((Node)mouseEvent.getSource()).getScene().getWindow();
-
-        windowMenu.setScene(menuScene);
-        windowMenu.show();
-    }
-
-
-    public void startBotGame(MouseEvent mouseEvent) throws IOException {
-        Parent menuWindow = FXMLLoader.load(getClass().getResource("game.fxml"));
         Scene menuScene = new Scene(menuWindow, 800, 600);
 
         Stage windowMenu = (Stage) ((Node)mouseEvent.getSource()).getScene().getWindow();
