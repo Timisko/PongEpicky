@@ -58,8 +58,8 @@ public class Game implements Initializable {
         public void handle(KeyEvent event) {
             // set movement to 0, if the released key was responsible for the paddle
             switch (event.getCode()) {
-                case W:
-                case S:
+                case UP:
+                case DOWN:
                     leftPaddleDY=0;
                     break;
             }
@@ -73,10 +73,10 @@ public class Game implements Initializable {
         public void handle(KeyEvent event) {
             // start movement according to key pressed
             switch (event.getCode()) {
-                case W:
+                case UP:
                     leftPaddleDY= -5;
                     break;
-                case S:
+                case DOWN:
                     leftPaddleDY= 5;
                     break;
             }
