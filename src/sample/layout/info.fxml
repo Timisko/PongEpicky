@@ -29,7 +29,7 @@
               <Image url="@../res/vs.png" />
           </image>
       </ImageView>
-      <Label layoutX="238.0" layoutY="131.0" text="Hra proti počítaču ovládame klávesami">
+      <Label layoutX="238.0" layoutY="131.0" text="Hra proti počítaču">
          <font>
             <Font size="20.0" />
          </font>
