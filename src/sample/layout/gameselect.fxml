@@ -8,11 +8,11 @@
    <children>
       <ImageView fitHeight="300.0" fitWidth="500.0" layoutX="24.0" layoutY="150.0" onMouseClicked="#startBotGame" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@res/robot.png" />
+            <Image url="@../res/robot.png" />
          </image></ImageView>
       <ImageView fitHeight="300.0" fitWidth="500.0" layoutX="476.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@res/vs.png" />
+            <Image url="@../res/vs.png" />
          </image></ImageView>
       <Text layoutX="122.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vyberte si herný mód" textAlignment="CENTER" wrappingWidth="556.13671875">
          <font>
@@ -30,7 +30,7 @@
       </Text>
       <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="24.0" layoutY="26.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@res/back.png" />
+            <Image url="@../res/back.png" />
          </image>
       </ImageView>
    </children>

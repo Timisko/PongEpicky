@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class Info {
     public void back(MouseEvent mouseEvent) throws IOException {
-        Parent menuWindow = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent menuWindow = FXMLLoader.load(getClass().getResource("layout/sample.fxml"));
         Scene menuScene = new Scene(menuWindow, 800, 600);
 
         Stage windowMenu = (Stage) ((Node)mouseEvent.getSource()).getScene().getWindow();

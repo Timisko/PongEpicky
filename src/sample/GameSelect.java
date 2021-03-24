@@ -12,7 +12,7 @@ import java.io.IOException;
 public class GameSelect {
 
     public void back(MouseEvent mouseEvent) throws IOException {
-        Parent menuWindow = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent menuWindow = FXMLLoader.load(getClass().getResource("layout/sample.fxml"));
         Scene menuScene = new Scene(menuWindow, 800, 600);
 
         Stage windowMenu = (Stage) ((Node)mouseEvent.getSource()).getScene().getWindow();
@@ -23,7 +23,7 @@ public class GameSelect {
 
 
     public void startBotGame(MouseEvent mouseEvent) throws IOException {
-        Parent menuWindow = FXMLLoader.load(getClass().getResource("game.fxml"));
+        Parent menuWindow = FXMLLoader.load(getClass().getResource("layout/game.fxml"));
         Scene menuScene = new Scene(menuWindow, 800, 600);
 
         Stage windowMenu = (Stage) ((Node)mouseEvent.getSource()).getScene().getWindow();

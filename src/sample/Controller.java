@@ -10,7 +10,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -30,7 +29,7 @@ public class Controller {
 
 
     public void herneOkno(ActionEvent actionEvent) throws IOException {
-        Parent GameSelectWindow = FXMLLoader.load(getClass().getResource("gameselect.fxml"));
+        Parent GameSelectWindow = FXMLLoader.load(getClass().getResource("layout/gameselect.fxml"));
         Scene GameSelectScene = new Scene(GameSelectWindow, 800, 600);
 
         Stage windowGameSelect = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
@@ -40,7 +39,7 @@ public class Controller {
     }
 
     public void obchodOkno(ActionEvent actionEvent) throws IOException {
-        Parent GameWindowShop = FXMLLoader.load(getClass().getResource("shop.fxml"));
+        Parent GameWindowShop = FXMLLoader.load(getClass().getResource("layout/shop.fxml"));
         Scene GameWindowSceneShop = new Scene(GameWindowShop, 800, 600);
 
         Stage windowShop = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
@@ -69,7 +68,7 @@ public class Controller {
     }
 
     public void infoOkno(MouseEvent mouseEvent) throws IOException {
-        Parent menuWindow = FXMLLoader.load(getClass().getResource("info.fxml"));
+        Parent menuWindow = FXMLLoader.load(getClass().getResource("layout/info.fxml"));
         Scene menuScene = new Scene(menuWindow, 800, 600);
 
         Stage windowMenu = (Stage) ((Node)mouseEvent.getSource()).getScene().getWindow();

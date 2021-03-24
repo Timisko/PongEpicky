@@ -43,7 +43,7 @@
          <children>
             <ImageView fitHeight="158.0" fitWidth="279.0" layoutX="266.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@res/pongLogo.png" />
+                  <Image url="@../res/pongLogo.png" />
                </image>
             </ImageView>
          </children></AnchorPane>
@@ -53,11 +53,11 @@
          <children>
             <ImageView fx:id="zvuk" fitHeight="70.0" fitWidth="70.0" layoutX="20.0" layoutY="70.0" onMouseClicked="#zmenZvuk" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@res/soundon.png" />
+                  <Image url="@../res/soundon.png" />
                </image></ImageView>
             <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="710.0" layoutY="70.0" onMouseClicked="#infoOkno" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@res/info.png" />
+                  <Image url="@../res/info.png" />
                </image>
             </ImageView>
          </children></AnchorPane>
