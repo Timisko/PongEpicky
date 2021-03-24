@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 
@@ -16,6 +17,7 @@ public class Main extends Application {
         primaryStage.setTitle("Pong");
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.setResizable(false);
+        primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("res/volleyball.png")));
         primaryStage.show();
     }
 

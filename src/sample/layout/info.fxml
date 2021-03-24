@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Info">
 
@@ -11,6 +13,75 @@
                 <Image url="@../res/back.png" />
             </image>
         </ImageView>
+      <Label layoutX="356.0" layoutY="23.0" text="Info">
+         <font>
+            <Font name="Comic Sans MS" size="40.0" />
+         </font>
+      </Label>
+      <Label layoutX="10.0" layoutY="570.0" text="Developed by Jakub Baranský, Timotej Breznický, Samuel Heteš, Matej Ľoch">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font></Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="80.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+              <Image url="@../res/robot.png" />
+          </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="80.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+              <Image url="@../res/vs.png" />
+          </image>
+      </ImageView>
+      <Label layoutX="270.0" layoutY="100.0" text="Hra proti počítaču">
+         <font>
+            <Font name="Comic Sans MS" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="270.0" layoutY="160.0" text="W - Pohyb hore">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="270.0" layoutY="190.0" text="S - Pohyb dole">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="270.0" layoutY="300.0" text="Hra pre 2 hráčov">
+         <font>
+            <Font name="Comic Sans MS" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="270.0" layoutY="360.0" text="1. Hráč:" textFill="#00ff1e">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="340.0" layoutY="360.0" text="W - Pohyb hore">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="340.0" layoutY="390.0" text="S - Pohyb dole">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="500.0" layoutY="360.0" text="2.Hráč:" textFill="RED">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="570.0" layoutY="360.0" text="UP - Pohyb hore">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="570.0" layoutY="390.0" text="DOWN - Pohyb dole">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </Label>
     </children>
 
 </AnchorPane>
