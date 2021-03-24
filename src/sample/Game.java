@@ -26,12 +26,15 @@ public class Game implements Initializable {
     private double leftPaddleDY;
     private double leftPaddleY = 175;
 
+    private int leftX = 30;
+    private int rightX = 770;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         new AnimationTimer(){
             final long period = 20000000;
             int speedX = 2;
-            int speedY = 5;
+            int speedY = 1;
             long lastSampleTime = System.nanoTime();
 
 
@@ -39,14 +42,14 @@ public class Game implements Initializable {
             public void handle(long l) {
                 if (l - lastSampleTime > period){
                     lopta.setLayoutX(lopta.getLayoutX() + speedX);
+                    if (lopta.getLayoutX() >= rightX){
+                        speedX =- speedX;
+                    }
+                    if (lopta.getLayoutX() <= leftX){
+                        speedX = 2;
+                    }
                     lastSampleTime += period;
                 }
-                leftPaddleY += leftPaddleDY;
-                if (leftPaddleY < 0) {
-                    leftPaddleY = 0;
-                }
-
-                Left.setLayoutY(leftPaddleY);
             }
         }.start();
     }
