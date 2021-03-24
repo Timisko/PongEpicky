@@ -13,12 +13,15 @@
                 <Image url="@../res/back.png" />
             </image>
         </ImageView>
-      <Label layoutX="354.0" layoutY="26.0" text="Info">
+      <Label layoutX="356.0" layoutY="23.0" text="Info">
          <font>
-            <Font size="53.0" />
+            <Font name="Comic Sans MS" size="40.0" />
          </font>
       </Label>
-      <Label layoutX="10.0" layoutY="569.0" text="Developed by Jakub Baranský, Timotej Breznický, Samuel Heteš, Matej Ľoch" />
+      <Label layoutX="10.0" layoutY="570.0" text="Developed by Jakub Baranský, Timotej Breznický, Samuel Heteš, Matej Ľoch">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font></Label>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="80.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
           <image>
               <Image url="@../res/robot.png" />
@@ -29,54 +32,54 @@
               <Image url="@../res/vs.png" />
           </image>
       </ImageView>
-      <Label layoutX="238.0" layoutY="131.0" text="Hra proti počítaču">
+      <Label layoutX="270.0" layoutY="100.0" text="Hra proti počítaču">
          <font>
-            <Font size="20.0" />
+            <Font name="Comic Sans MS" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="275.0" layoutY="165.0" text="W - Pohyb hore">
+      <Label layoutX="270.0" layoutY="160.0" text="W - Pohyb hore">
          <font>
-            <Font size="18.0" />
+            <Font name="Comic Sans MS" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="280.0" layoutY="200.0" text="S - Pohyb dole">
+      <Label layoutX="270.0" layoutY="190.0" text="S - Pohyb dole">
          <font>
-            <Font size="18.0" />
+            <Font name="Comic Sans MS" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="238.0" layoutY="312.0" text="Hra pre 2 hráčov">
+      <Label layoutX="270.0" layoutY="300.0" text="Hra pre 2 hráčov">
          <font>
-            <Font size="20.0" />
+            <Font name="Comic Sans MS" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="238.0" layoutY="345.0" text="1. Hráč:" textFill="#00ff1e">
+      <Label layoutX="270.0" layoutY="360.0" text="1. Hráč:" textFill="#00ff1e">
          <font>
-            <Font size="20.0" />
+            <Font name="Comic Sans MS" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="312.0" layoutY="347.0" text="W - Pohyb hore">
+      <Label layoutX="340.0" layoutY="360.0" text="W - Pohyb hore">
          <font>
-            <Font size="18.0" />
+            <Font name="Comic Sans MS" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="317.0" layoutY="382.0" text="S - Pohyb dole">
+      <Label layoutX="340.0" layoutY="390.0" text="S - Pohyb dole">
          <font>
-            <Font size="18.0" />
+            <Font name="Comic Sans MS" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="481.0" layoutY="346.0" text="2.Hráč:" textFill="RED">
+      <Label layoutX="500.0" layoutY="360.0" text="2.Hráč:" textFill="RED">
          <font>
-            <Font size="20.0" />
+            <Font name="Comic Sans MS" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="555.0" layoutY="348.0" text="UP - Pohyb hore">
+      <Label layoutX="570.0" layoutY="360.0" text="UP - Pohyb hore">
          <font>
-            <Font size="18.0" />
+            <Font name="Comic Sans MS" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="555.0" layoutY="382.0" text="DOWN - Pohyb dole">
+      <Label layoutX="570.0" layoutY="390.0" text="DOWN - Pohyb dole">
          <font>
-            <Font size="18.0" />
+            <Font name="Comic Sans MS" size="18.0" />
          </font>
       </Label>
     </children>
