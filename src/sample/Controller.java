@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -29,23 +30,13 @@ public class Controller {
 
 
     public void herneOkno(ActionEvent actionEvent) throws IOException {
-        Parent GameSelectWindow = FXMLLoader.load(getClass().getResource("layout/gameselect.fxml"));
-        Scene GameSelectScene = new Scene(GameSelectWindow, 800, 600);
-
-        Stage windowGameSelect = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-
-        windowGameSelect.setScene(GameSelectScene);
-        windowGameSelect.show();
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("layout/gameselect.fxml"));
+        menu.getChildren().setAll(pane);
     }
 
     public void obchodOkno(ActionEvent actionEvent) throws IOException {
-        Parent GameWindowShop = FXMLLoader.load(getClass().getResource("layout/shop.fxml"));
-        Scene GameWindowSceneShop = new Scene(GameWindowShop, 800, 600);
-
-        Stage windowShop = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-
-        windowShop.setScene(GameWindowSceneShop);
-        windowShop.show();
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("layout/shop.fxml"));
+        menu.getChildren().setAll(pane);
     }
 
     public void exit(ActionEvent actionEvent) {
@@ -68,12 +59,7 @@ public class Controller {
     }
 
     public void infoOkno(MouseEvent mouseEvent) throws IOException {
-        Parent menuWindow = FXMLLoader.load(getClass().getResource("layout/info.fxml"));
-        Scene menuScene = new Scene(menuWindow, 800, 600);
-
-        Stage windowMenu = (Stage) ((Node)mouseEvent.getSource()).getScene().getWindow();
-
-        windowMenu.setScene(menuScene);
-        windowMenu.show();
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("layout/info.fxml"));
+        menu.getChildren().setAll(pane);
     }
 }

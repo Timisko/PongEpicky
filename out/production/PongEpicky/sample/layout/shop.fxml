@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Shop">
+<AnchorPane fx:id="menu" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Shop">
     <children>
         <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="24.0" layoutY="26.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -25,7 +25,7 @@
          <image>
             <Image url="@../res/dollar.png" />
          </image></ImageView>
-      <Text layoutX="348.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pozadia">
+      <Text layoutX="347.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pozadia">
          <font>
             <Font size="30.0" />
          </font>
@@ -48,16 +48,45 @@
          <image>
             <Image url="@../res/tenistable.jpg" />
          </image></ImageView>
-      <Button layoutX="148.0" layoutY="227.0" mnemonicParsing="false" text="Button" />
-      <Button layoutX="369.0" layoutY="227.0" mnemonicParsing="false" text="Button" />
-      <Button layoutX="596.0" layoutY="227.0" mnemonicParsing="false" text="Button" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="92.0" layoutY="368.0" pickOnBounds="true" preserveRatio="true">
+      <Button layoutX="148.0" layoutY="227.0" mnemonicParsing="false" text="Kúpiť" textAlignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font></Button>
+      <Button layoutX="369.0" layoutY="227.0" mnemonicParsing="false" text="Kúpiť" textAlignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font></Button>
+      <Button layoutX="596.0" layoutY="227.0" mnemonicParsing="false" text="Kúpiť">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font></Button>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="125.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../res/football_ball.png" />
+            <Image url="@../res/fotball_ball.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="292.0" layoutY="368.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="492.0" layoutY="368.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="325.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../res/basketball_ball.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="525.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../res/volleyball_png.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="176.0" layoutY="441.0" mnemonicParsing="false" text="Kúpiť">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font></Button>
+      <Button layoutX="369.0" layoutY="441.0" mnemonicParsing="false" text="Kúpiť">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font></Button>
+      <Button layoutX="574.0" layoutY="441.0" mnemonicParsing="false" text="Kúpiť">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font></Button>
     </children>
 
 </AnchorPane>
