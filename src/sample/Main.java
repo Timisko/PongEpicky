@@ -13,6 +13,8 @@ import javafx.stage.Stage;
 public class Main extends Application {
     public Parent root;
 
+    public int peniaze = 0;
+
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -33,10 +35,10 @@ public class Main extends Application {
                     case DOWN:
                         break;
                     case W:
-                        Game.PosY = -3;
+                        Game.PosY = -4;
                         break;
                     case S:
-                        Game.PosY = 3;
+                        Game.PosY = 4;
                         break;
                 }
             }

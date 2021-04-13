@@ -1,27 +1,21 @@
 package sample;
 
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.animation.AnimationTimer;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Bounds;
-import javafx.scene.Scene;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Game implements Initializable {
+    public Label skore;
+    public Label money;
     @FXML
-    AnchorPane menu;
+    AnchorPane panel;
     @FXML
     Circle lopta;
     @FXML
@@ -29,19 +23,21 @@ public class Game implements Initializable {
     @FXML
     Rectangle Right;
 
-    private int sirkaHrac = 10;
-    private final int vyskaHrac = 50;
+    public int peniaze = 0;
 
-    private double hracY = 275;
+    private final int sirkaHrac = 10;
+    private final int vyskaHrac = 70;
+
+    private double startY = 215;
 
     private final int leftX = 30;
     private final int rightX = 770;
 
     private final int loptaX = 400;
-    private final int loptaY = 300;
+    private final int loptaY = 250;
 
-    private final int WIDTH = 800;
-    private final int HEIGHT = 600;
+    private final int WIDTH = 600;
+    private final int HEIGHT = 500;
 
     private int bodyHrac = 0;
     private int bodyPocitac = 0;
@@ -50,20 +46,42 @@ public class Game implements Initializable {
 
     static boolean pokracuj = true;
 
+    int speedX = 2;
+    int speedY = 2;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        /* lopta image
+        lopta.setFill(new ImagePattern(new Image(Game.class.getResourceAsStream("res/football_ball.png"))));
+         */
         new AnimationTimer(){
             final long period = 20000000;
-            int speedX = 2;
-            int speedY = 1;
             long lastSampleTime = System.nanoTime();
             @Override
             public void handle(long l) {
                 if (l - lastSampleTime > period){
-
                     //pohyb lopty
                     lopta.setLayoutX(lopta.getLayoutX() + speedX);
                     lopta.setLayoutY(lopta.getLayoutY() + speedY);
+
+                    //pohyb pocitaca
+                    Right.setLayoutY((lopta.getLayoutY() - vyskaHrac / 2));
+
+
+                    //zamedzenie vychadzania hracov z herneho pola
+                    if (Left.getLayoutY() <= 0){
+                        Left.setLayoutY(0);
+                    }
+                    if (Left.getLayoutY() + vyskaHrac >= HEIGHT){
+                        Left.setLayoutY(HEIGHT - vyskaHrac);
+                    }
+
+                    if (Right.getLayoutY() <= 0){
+                        Right.setLayoutY(0);
+                    }
+                    if (Right.getLayoutY() + vyskaHrac >= HEIGHT){
+                        Right.setLayoutY(HEIGHT - vyskaHrac);
+                    }
 
                     //odrazanie od hracov a zrychlovanie
                     if (
@@ -81,26 +99,21 @@ public class Game implements Initializable {
                         speedY *= -1;
                     }
 
-                    //pohyb pocitaca
-                    if(Right.getLayoutY() < WIDTH - WIDTH  / 4) {
-                        Right.setLayoutY(lopta.getLayoutY() - vyskaHrac / 2);
-                    }
-
                     //ked sa lopta dotkne vrchu alebo spodku obrazovky zmeni uhol
-                    if(lopta.getLayoutY() > HEIGHT || lopta.getLayoutY() < 10) speedY *=-1;
+                    if(lopta.getLayoutY()+10 > HEIGHT || lopta.getLayoutY() < 10) speedY *=-1;
 
                     //ak pocitac skoruje
                     if(lopta.getLayoutX() < leftX - sirkaHrac) {
                         bodyPocitac++;
+                        peniaze += 10;
+                        money.setText("" + peniaze);
                         lopta.setLayoutX(loptaX);
                         lopta.setLayoutY(loptaY);
-                        Right.setLayoutY(hracY);
-                        Left.setLayoutY(hracY);
+                        Right.setLayoutY(startY);
+                        Left.setLayoutY(startY);
                         speedX = 1;
                         speedY = 1;
-                        System.out.println("Hrac "+bodyHrac+" : "+bodyPocitac+" Pocitac");
-                        stop();
-                        if (pokracuj)start();
+                        skore.setText(bodyHrac + " : " + bodyPocitac);
                     }
 
                     //ak hrac skoruje
@@ -108,13 +121,11 @@ public class Game implements Initializable {
                         bodyHrac++;
                         lopta.setLayoutX(loptaX);
                         lopta.setLayoutY(loptaY);
-                        Right.setLayoutY(hracY);
-                        Left.setLayoutY(hracY);
+                        Right.setLayoutY(startY);
+                        Left.setLayoutY(startY);
                         speedX = 1;
                         speedY = 1;
-                        System.out.println("Hrac "+bodyHrac+" : "+bodyPocitac+" Pocitac");
-                        stop();
-                        if (pokracuj)start();
+                        skore.setText(bodyHrac + " : " + bodyPocitac);
                     }
 
                     lastSampleTime += period;

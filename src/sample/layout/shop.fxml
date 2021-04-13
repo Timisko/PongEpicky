@@ -17,7 +17,7 @@
             <Font name="Comic Sans MS Bold" size="40.0" />
          </font>
       </Text>
-      <Label layoutX="630.0" layoutY="36.0" text="Label">
+      <Label layoutX="667.0" layoutY="35.0" text="0">
          <font>
             <Font name="Comic Sans MS" size="24.0" />
          </font></Label>
@@ -25,12 +25,12 @@
          <image>
             <Image url="@../res/dollar.png" />
          </image></ImageView>
-      <Text layoutX="347.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pozadia">
+      <Text layoutX="49.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pozadia">
          <font>
             <Font size="30.0" />
          </font>
       </Text>
-      <Text layoutX="362.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lopta">
+      <Text layoutX="49.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lopta">
          <font>
             <Font size="30.0" />
          </font>

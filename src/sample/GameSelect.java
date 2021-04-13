@@ -20,7 +20,7 @@ public class GameSelect {
     }
 
     public void startBotGame(MouseEvent mouseEvent) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("layout/game.fxml"));
+        BorderPane pane = FXMLLoader.load(getClass().getResource("layout/game.fxml"));
         menu.getChildren().setAll(pane);
     }
 }
