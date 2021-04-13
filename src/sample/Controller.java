@@ -18,16 +18,8 @@ import java.io.InputStream;
 
 public class Controller {
     public BorderPane menu;
-    public String biela;
     public ImageView zvuk;
     int i = 0;
-
-    @FXML
-    private void initialize(){
-        biela = "ffffff";
-        menu.setStyle("-fx-background-color: #" + biela);
-    }
-
 
     public void herneOkno(ActionEvent actionEvent) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("layout/gameselect.fxml"));
