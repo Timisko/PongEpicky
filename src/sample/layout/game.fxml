@@ -2,7 +2,7 @@
 
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
-
+<BorderPane>
 <AnchorPane id="panel" fx:id="panel" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Game">
    <children>
       <Rectangle id="Left" fx:id="Left" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="10.0" layoutY="275.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
@@ -10,3 +10,4 @@
       <Circle id="lopta" fx:id="lopta" fill="DODGERBLUE" layoutX="400.0" layoutY="300.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>
+</BorderPane>
