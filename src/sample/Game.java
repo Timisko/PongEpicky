@@ -1,19 +1,27 @@
 package sample;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.animation.AnimationTimer;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Game implements Initializable {
     public Label skore;
     public Label money;
+    public AnchorPane pause;
+    public BorderPane menu;
+
     @FXML
     AnchorPane panel;
     @FXML
@@ -54,87 +62,104 @@ public class Game implements Initializable {
         /* lopta image
         lopta.setFill(new ImagePattern(new Image(Game.class.getResourceAsStream("res/football_ball.png"))));
          */
-        new AnimationTimer(){
-            final long period = 20000000;
-            long lastSampleTime = System.nanoTime();
-            @Override
-            public void handle(long l) {
-                if (l - lastSampleTime > period){
-                    //pohyb lopty
-                    lopta.setLayoutX(lopta.getLayoutX() + speedX);
-                    lopta.setLayoutY(lopta.getLayoutY() + speedY);
+            new AnimationTimer() {
+                final long period = 20000000;
+                long lastSampleTime = System.nanoTime();
 
-                    //pohyb pocitaca
-                    Right.setLayoutY((lopta.getLayoutY() - vyskaHrac / 2));
+                @Override
+                public void handle(long l) {
+                    if (pokracuj){
+                    if (l - lastSampleTime > period) {
+                        //pohyb lopty
+                        lopta.setLayoutX(lopta.getLayoutX() + speedX);
+                        lopta.setLayoutY(lopta.getLayoutY() + speedY);
+
+                        //pohyb pocitaca
+                        Right.setLayoutY((lopta.getLayoutY() - vyskaHrac / 2));
 
 
-                    //zamedzenie vychadzania hracov z herneho pola
-                    if (Left.getLayoutY() <= 0){
-                        Left.setLayoutY(0);
-                    }
-                    if (Left.getLayoutY() + vyskaHrac >= HEIGHT){
-                        Left.setLayoutY(HEIGHT - vyskaHrac);
-                    }
+                        //zamedzenie vychadzania hracov z herneho pola
+                        if (Left.getLayoutY() <= 0) {
+                            Left.setLayoutY(0);
+                        }
+                        if (Left.getLayoutY() + vyskaHrac >= HEIGHT) {
+                            Left.setLayoutY(HEIGHT - vyskaHrac);
+                        }
 
-                    if (Right.getLayoutY() <= 0){
-                        Right.setLayoutY(0);
-                    }
-                    if (Right.getLayoutY() + vyskaHrac >= HEIGHT){
-                        Right.setLayoutY(HEIGHT - vyskaHrac);
-                    }
+                        if (Right.getLayoutY() <= 0) {
+                            Right.setLayoutY(0);
+                        }
+                        if (Right.getLayoutY() + vyskaHrac >= HEIGHT) {
+                            Right.setLayoutY(HEIGHT - vyskaHrac);
+                        }
 
-                    //odrazanie od hracov a zrychlovanie
-                    if (
+                        //odrazanie od hracov a zrychlovanie
+                        if (
                             //podmienka pre pravu stranu
-                            ((lopta.getLayoutX() > rightX) && (lopta.getLayoutY() >= Right.getLayoutY()) &&
-                            (lopta.getLayoutY() <= Right.getLayoutY() + vyskaHrac))
+                                ((lopta.getLayoutX() > rightX) && (lopta.getLayoutY() >= Right.getLayoutY()) &&
+                                        (lopta.getLayoutY() <= Right.getLayoutY() + vyskaHrac))
 
-                                    //podmienka pre lavu stranu
-                                    || ((lopta.getLayoutX() < leftX) && (lopta.getLayoutY() >= Left.getLayoutY()) &&
-                                    (lopta.getLayoutY() <= Left.getLayoutY() + vyskaHrac)))
-                    {
-                        speedX += 1 * Math.signum(speedX);
-                        speedX *= -1;
-                        speedY += 1 * Math.signum(speedY);
-                        speedY *= -1;
+                                        //podmienka pre lavu stranu
+                                        || ((lopta.getLayoutX() < leftX) && (lopta.getLayoutY() >= Left.getLayoutY()) &&
+                                        (lopta.getLayoutY() <= Left.getLayoutY() + vyskaHrac))) {
+                            speedX += 1 * Math.signum(speedX);
+                            speedX *= -1;
+                            speedY += 1 * Math.signum(speedY);
+                            speedY *= -1;
+                        }
+
+                        //ked sa lopta dotkne vrchu alebo spodku obrazovky zmeni uhol
+                        if (lopta.getLayoutY() + 10 > HEIGHT || lopta.getLayoutY() < 10) speedY *= -1;
+
+                        //ak pocitac skoruje
+                        if (lopta.getLayoutX() < leftX - sirkaHrac) {
+                            bodyPocitac++;
+                            peniaze += 10;
+                            money.setText("" + peniaze);
+                            lopta.setLayoutX(loptaX);
+                            lopta.setLayoutY(loptaY);
+                            Right.setLayoutY(startY);
+                            Left.setLayoutY(startY);
+                            speedX = 1;
+                            speedY = 1;
+                            skore.setText(bodyHrac + " : " + bodyPocitac);
+                        }
+
+                        //ak hrac skoruje
+                        if (lopta.getLayoutX() > rightX + sirkaHrac) {
+                            bodyHrac++;
+                            lopta.setLayoutX(loptaX);
+                            lopta.setLayoutY(loptaY);
+                            Right.setLayoutY(startY);
+                            Left.setLayoutY(startY);
+                            speedX = 1;
+                            speedY = 1;
+                            skore.setText(bodyHrac + " : " + bodyPocitac);
+                        }
+
+                        lastSampleTime += period;
                     }
 
-                    //ked sa lopta dotkne vrchu alebo spodku obrazovky zmeni uhol
-                    if(lopta.getLayoutY()+10 > HEIGHT || lopta.getLayoutY() < 10) speedY *=-1;
+                    //podmienka potrebna pre pohyb pomocou klavesnice
+                    if (PosY != 0) Left.setLayoutY(Left.getLayoutY() + PosY);
 
-                    //ak pocitac skoruje
-                    if(lopta.getLayoutX() < leftX - sirkaHrac) {
-                        bodyPocitac++;
-                        peniaze += 10;
-                        money.setText("" + peniaze);
-                        lopta.setLayoutX(loptaX);
-                        lopta.setLayoutY(loptaY);
-                        Right.setLayoutY(startY);
-                        Left.setLayoutY(startY);
-                        speedX = 1;
-                        speedY = 1;
-                        skore.setText(bodyHrac + " : " + bodyPocitac);
-                    }
+                }}
+            }.start();
+    }
 
-                    //ak hrac skoruje
-                    if(lopta.getLayoutX() > rightX + sirkaHrac) {
-                        bodyHrac++;
-                        lopta.setLayoutX(loptaX);
-                        lopta.setLayoutY(loptaY);
-                        Right.setLayoutY(startY);
-                        Left.setLayoutY(startY);
-                        speedX = 1;
-                        speedY = 1;
-                        skore.setText(bodyHrac + " : " + bodyPocitac);
-                    }
+    public void pauza(MouseEvent mouseEvent) {
+        pokracuj = false;
+        pause.setVisible(true);
+    }
 
-                    lastSampleTime += period;
-                }
+    public void unpause(ActionEvent actionEvent) {
+        pokracuj = true;
+        pause.setVisible(false);
+    }
 
-                //podmienka potrebna pre pohyb pomocou klavesnice
-                if (PosY !=0) Left.setLayoutY(Left.getLayoutY() + PosY);
-
-            }
-        }.start();
+    public void back(ActionEvent actionEvent) throws IOException {
+        BorderPane pane = FXMLLoader.load(getClass().getResource("layout/sample.fxml"));
+        menu.getChildren().setAll(pane);
+        pokracuj = true;
     }
 }
