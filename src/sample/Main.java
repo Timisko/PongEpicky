@@ -7,14 +7,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
+
+import java.io.File;
 
 
 public class Main extends Application {
     public Parent root;
-
-    public int peniaze = 0;
-
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -59,6 +61,19 @@ public class Main extends Application {
             }
         });
     }
+
+    /*
+    public void hrajHudbu(){
+        String path = Main.class.getResource("res/menu.mp3").toString();
+        Media media = new Media(path);
+        player = new MediaPlayer(media);
+        player.setVolume(0.05);
+        player.play();
+    }
+
+    public void nehrajHudbu(){
+        player.stop();
+    }*/
 
     public static void main(String[] args) {
         launch(args);

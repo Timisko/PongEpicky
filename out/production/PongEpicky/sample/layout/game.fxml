@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Game">
+<BorderPane fx:id="menu" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Game">
    <top>
       <AnchorPane prefHeight="100.0" prefWidth="800.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
@@ -24,7 +24,7 @@
                   <Image url="@../res/dollar.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="60.0" fitWidth="45.0" layoutX="14.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="60.0" fitWidth="45.0" layoutX="14.0" layoutY="28.0" onMouseClicked="#pauza" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../res/pause.png" />
                </image>
@@ -37,6 +37,17 @@
             <Rectangle id="Left" fx:id="Left" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="70.0" layoutX="10.0" layoutY="215.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
             <Rectangle id="Right" fx:id="Right" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="70.0" layoutX="780.0" layoutY="215.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
             <Circle id="lopta" fx:id="lopta" fill="WHITE" layoutX="400.0" layoutY="250.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+            <AnchorPane fx:id="pause" layoutX="250.0" layoutY="174.0" prefHeight="150.0" prefWidth="300.0" style="-fx-background-color: white;" visible="false">
+               <children>
+                  <Button layoutX="50.0" layoutY="80.0" mnemonicParsing="false" onAction="#back" prefHeight="40" prefWidth="200" text="Návrat do menu">
+                     <font>
+                        <Font name="Comic Sans MS" size="18.0" />
+                     </font></Button>
+                  <Button layoutX="50.0" layoutY="30.0" mnemonicParsing="false" onAction="#unpause" prefHeight="40" prefWidth="200" text="Pokračovať">
+                     <font>
+                        <Font name="Comic Sans MS" size="18.0" />
+                     </font></Button>
+               </children></AnchorPane>
          </children>
       </AnchorPane>
    </center>
