@@ -62,19 +62,6 @@ public class Main extends Application {
         });
     }
 
-    /*
-    public void hrajHudbu(){
-        String path = Main.class.getResource("res/menu.mp3").toString();
-        Media media = new Media(path);
-        player = new MediaPlayer(media);
-        player.setVolume(0.05);
-        player.play();
-    }
-
-    public void nehrajHudbu(){
-        player.stop();
-    }*/
-
     public static void main(String[] args) {
         launch(args);
     }
