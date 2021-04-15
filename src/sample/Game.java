@@ -102,6 +102,7 @@ public class Game implements Initializable {
                                         //podmienka pre lavu stranu
                                         || ((lopta.getLayoutX() < leftX) && (lopta.getLayoutY() >= Left.getLayoutY()) &&
                                         (lopta.getLayoutY() <= Left.getLayoutY() + vyskaHrac))) {
+
                             speedX += 1 * Math.signum(speedX);
                             speedX *= -1;
                             speedY += 1 * Math.signum(speedY);
@@ -109,12 +110,11 @@ public class Game implements Initializable {
                         }
 
                         //ked sa lopta dotkne vrchu alebo spodku obrazovky zmeni uhol
-                        if (lopta.getLayoutY() + 10 > HEIGHT || lopta.getLayoutY() < 10) speedY *= -1;
+                        if (lopta.getLayoutY() + 10 > HEIGHT || lopta.getLayoutY() - 10 < 0) speedY *= -1;
 
                         //ak pocitac skoruje
                         if (lopta.getLayoutX() < leftX - sirkaHrac) {
                             bodyPocitac++;
-                            peniaze += 10;
                             money.setText("" + peniaze);
                             lopta.setLayoutX(loptaX);
                             lopta.setLayoutY(loptaY);
@@ -128,6 +128,7 @@ public class Game implements Initializable {
                         //ak hrac skoruje
                         if (lopta.getLayoutX() > rightX + sirkaHrac) {
                             bodyHrac++;
+                            peniaze += 10;
                             lopta.setLayoutX(loptaX);
                             lopta.setLayoutY(loptaY);
                             Right.setLayoutY(startY);
