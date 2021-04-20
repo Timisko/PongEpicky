@@ -33,14 +33,18 @@ public class Main extends Application {
             public void handle(KeyEvent event) {
                 switch (event.getCode()) {
                     case UP:
+                        VersusGame.Pos2Y = -4;
                         break;
                     case DOWN:
+                        VersusGame.Pos2Y = 4;
                         break;
                     case W:
                         Game.PosY = -4;
+                        VersusGame.Pos1Y = -4;
                         break;
                     case S:
                         Game.PosY = 4;
+                        VersusGame.Pos1Y = 4;
                         break;
                 }
             }
@@ -50,12 +54,13 @@ public class Main extends Application {
             public void handle(KeyEvent event) {
                 switch (event.getCode()) {
                     case UP:
-                        break;
                     case DOWN:
+                        VersusGame.Pos2Y = 0;
                         break;
                     case W:
                     case S:
                         Game.PosY = 0;
+                        VersusGame.Pos1Y = 0;
                         break;
                 }
             }

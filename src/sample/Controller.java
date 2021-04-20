@@ -77,10 +77,10 @@ public class Controller implements Initializable {
     }
 
     public void vypniZvuk(){
-        player.pause();
+        player.setVolume(0);
     }
 
     public void zapniZvuk(){
-        player.play();
+        player.setVolume(0.05);
     }
 }

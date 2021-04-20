@@ -23,4 +23,9 @@ public class GameSelect {
         BorderPane pane = FXMLLoader.load(getClass().getResource("layout/game.fxml"));
         menu.getChildren().setAll(pane);
     }
+
+    public void startVersusGame(MouseEvent mouseEvent) throws IOException {
+        BorderPane pane = FXMLLoader.load(getClass().getResource("layout/versusGame.fxml"));
+        menu.getChildren().setAll(pane);
+    }
 }

@@ -10,7 +10,7 @@
          <image>
             <Image url="@../res/robot.png" />
          </image></ImageView>
-      <ImageView fitHeight="300.0" fitWidth="500.0" layoutX="476.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="300.0" fitWidth="500.0" layoutX="476.0" layoutY="150.0" onMouseClicked="#startVersusGame" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../res/vs.png" />
          </image></ImageView>
