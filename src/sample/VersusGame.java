@@ -6,9 +6,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
@@ -21,6 +25,7 @@ public class VersusGame implements Initializable {
     public Label money;
     public AnchorPane pause;
     public BorderPane menu;
+    public AnchorPane koniec;
 
     @FXML
     AnchorPane panel;
@@ -60,9 +65,10 @@ public class VersusGame implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        /* lopta image
-        lopta.setFill(new ImagePattern(new Image(Game.class.getResourceAsStream("res/fLopta.png"))));
-         */
+
+        /*
+        lopta.setFill(new ImagePattern(new Image(Game.class.getResourceAsStream("res/fLopta.png"))));*/
+
         new AnimationTimer() {
             final long period = 20000000;
             long lastSampleTime = System.nanoTime();
@@ -131,6 +137,11 @@ public class VersusGame implements Initializable {
                             speedX = 2;
                             speedY = 2;
                             skore.setText(bodyHrac + " : " + bodyPocitac);
+                        }
+
+                        if (bodyHrac == 5 || bodyPocitac == 5){
+                            stop();
+                            koniec.setVisible(true);
                         }
 
                         lastSampleTime += period;

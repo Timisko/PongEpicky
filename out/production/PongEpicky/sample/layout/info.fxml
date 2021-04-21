@@ -13,7 +13,7 @@
                 <Image url="@../res/back.png" />
             </image>
         </ImageView>
-      <Label layoutX="356.0" layoutY="23.0" text="Info">
+      <Label layoutX="300.0" layoutY="23.0" text="Ovládanie">
          <font>
             <Font name="Comic Sans MS" size="40.0" />
          </font>
