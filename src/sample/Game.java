@@ -60,7 +60,7 @@ public class Game implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         /* lopta image
-        lopta.setFill(new ImagePattern(new Image(Game.class.getResourceAsStream("res/football_ball.png"))));
+        lopta.setFill(new ImagePattern(new Image(Game.class.getResourceAsStream("res/fLopta.png"))));
          */
             new AnimationTimer() {
                 final long period = 20000000;

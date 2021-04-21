@@ -20,7 +20,7 @@ public class Main extends Application {
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
-        primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("res/volleyball.png")));
+        primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("res/ikona.png")));
         primaryStage.show();
 
         scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {

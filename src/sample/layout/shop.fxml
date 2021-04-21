@@ -14,7 +14,7 @@
         </ImageView>
       <Text layoutX="327.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Obchod" wrappingWidth="146.533203125">
          <font>
-            <Font name="Comic Sans MS Bold" size="40.0" />
+            <Font name="Comic Sans MS" size="40.0" />
          </font>
       </Text>
       <Label layoutX="667.0" layoutY="35.0" text="0">
@@ -27,26 +27,26 @@
          </image></ImageView>
       <Text layoutX="49.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pozadia">
          <font>
-            <Font size="30.0" />
+            <Font name="Comic Sans MS" size="30.0" />
          </font>
       </Text>
       <Text layoutX="49.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lopta">
          <font>
-            <Font size="30.0" />
+            <Font name="Comic Sans MS" size="30.0" />
          </font>
       </Text>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="74.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../res/footballplayground.jpg" />
+            <Image url="@../res/fPozadie.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="140.0" fitWidth="243.0" layoutX="274.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../res/basketballplayground.jpg" />
+            <Image url="@../res/bPozadie.jpg" />
          </image></ImageView>
       <ImageView fitHeight="140.0" fitWidth="211.0" layoutX="516.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../res/tenistable.jpg" />
+            <Image url="@../res/vPozadie.jpg" />
          </image></ImageView>
       <Button layoutX="148.0" layoutY="227.0" mnemonicParsing="false" text="Kúpiť" textAlignment="CENTER">
          <font>
@@ -62,17 +62,17 @@
          </font></Button>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="125.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../res/fotball_ball.png" />
+            <Image url="@../res/fLopta.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="325.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../res/basketball_ball.png" />
+            <Image url="@../res/bLopta.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="525.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../res/volleyball_png.png" />
+            <Image url="@../res/vLopta.png" />
          </image>
       </ImageView>
       <Button layoutX="176.0" layoutY="441.0" mnemonicParsing="false" text="Kúpiť">

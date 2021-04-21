@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="menu" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Info">
+
+    <children>
+        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="24.0" layoutY="26.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../res/back.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="297.0" layoutY="23.0" text="Nastavenia">
+            <font>
+                <Font name="Comic Sans MS" size="40.0" />
+            </font>
+        </Label>
+    </children>
+
+</AnchorPane>

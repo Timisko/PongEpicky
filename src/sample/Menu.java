@@ -83,4 +83,9 @@ public class Menu implements Initializable {
     public void zapniZvuk(){
         player.setVolume(0.05);
     }
+
+    public void nastaveniaOkno(ActionEvent actionEvent) throws IOException{
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("layout/settings.fxml"));
+        menu.getChildren().setAll(pane);
+    }
 }
