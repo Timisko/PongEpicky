@@ -120,8 +120,8 @@ public class Game implements Initializable {
                             lopta.setLayoutY(loptaY);
                             Right.setLayoutY(startY);
                             Left.setLayoutY(startY);
-                            speedX = 1;
-                            speedY = 1;
+                            speedX = 2;
+                            speedY = 2;
                             skore.setText(bodyHrac + " : " + bodyPocitac);
                         }
 
@@ -133,8 +133,8 @@ public class Game implements Initializable {
                             lopta.setLayoutY(loptaY);
                             Right.setLayoutY(startY);
                             Left.setLayoutY(startY);
-                            speedX = 1;
-                            speedY = 1;
+                            speedX = 2;
+                            speedY = 2;
                             skore.setText(bodyHrac + " : " + bodyPocitac);
                         }
 
@@ -159,7 +159,7 @@ public class Game implements Initializable {
     }
 
     public void back(ActionEvent actionEvent) throws IOException {
-        BorderPane pane = FXMLLoader.load(getClass().getResource("layout/sample.fxml"));
+        BorderPane pane = FXMLLoader.load(getClass().getResource("layout/menu.fxml"));
         menu.getChildren().setAll(pane);
         pokracuj = true;
     }

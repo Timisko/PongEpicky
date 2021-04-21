@@ -7,12 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
-
-import java.io.File;
 
 
 public class Main extends Application {
@@ -20,7 +15,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        root = FXMLLoader.load(getClass().getResource("layout/sample.fxml"));
+        root = FXMLLoader.load(getClass().getResource("layout/menu.fxml"));
         primaryStage.setTitle("Pong");
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);

@@ -21,7 +21,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+public class Menu implements Initializable {
     public BorderPane menu;
     public ImageView zvuk;
     public MediaPlayer player;
