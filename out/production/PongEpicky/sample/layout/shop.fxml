@@ -30,63 +30,69 @@
             <Font name="Comic Sans MS" size="30.0" />
          </font>
       </Text>
-      <Text layoutX="49.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lopta">
+      <Text layoutX="49.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lopta">
          <font>
             <Font name="Comic Sans MS" size="30.0" />
          </font>
       </Text>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="74.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="50.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../res/fPozadie.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="140.0" fitWidth="243.0" layoutX="274.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="140.0" fitWidth="243.0" layoutX="279.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../res/bPozadie.jpg" />
          </image></ImageView>
-      <ImageView fitHeight="140.0" fitWidth="211.0" layoutX="516.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="140.0" fitWidth="211.0" layoutX="550.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../res/vPozadie.jpg" />
          </image></ImageView>
-      <Button layoutX="148.0" layoutY="227.0" mnemonicParsing="false" text="Kúpiť" textAlignment="CENTER">
+      <Button layoutX="126.0" layoutY="227.0" mnemonicParsing="false" text="Kúpiť" textAlignment="CENTER">
          <font>
             <Font name="Comic Sans MS" size="12.0" />
          </font></Button>
-      <Button layoutX="369.0" layoutY="227.0" mnemonicParsing="false" text="Kúpiť" textAlignment="CENTER">
+      <Button layoutX="376.0" layoutY="227.0" mnemonicParsing="false" text="Kúpiť" textAlignment="CENTER">
          <font>
             <Font name="Comic Sans MS" size="12.0" />
          </font></Button>
-      <Button layoutX="596.0" layoutY="227.0" mnemonicParsing="false" text="Kúpiť">
+      <Button layoutX="632.0" layoutY="226.0" mnemonicParsing="false" text="Kúpiť">
          <font>
             <Font name="Comic Sans MS" size="12.0" />
          </font></Button>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="125.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="72.0" layoutY="392.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../res/fLopta.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="325.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="325.0" layoutY="392.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../res/bLopta.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="525.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="581.0" layoutY="392.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../res/vLopta.png" />
          </image>
       </ImageView>
-      <Button layoutX="176.0" layoutY="441.0" mnemonicParsing="false" text="Kúpiť">
+      <Button layoutX="129.0" layoutY="453.0" mnemonicParsing="false" text="Kúpiť">
          <font>
             <Font name="Comic Sans MS" size="12.0" />
          </font></Button>
-      <Button layoutX="369.0" layoutY="441.0" mnemonicParsing="false" text="Kúpiť">
+      <Button layoutX="376.0" layoutY="454.0" mnemonicParsing="false" text="Kúpiť">
          <font>
             <Font name="Comic Sans MS" size="12.0" />
          </font></Button>
-      <Button layoutX="574.0" layoutY="441.0" mnemonicParsing="false" text="Kúpiť">
+      <Button layoutX="632.0" layoutY="453.0" mnemonicParsing="false" text="Kúpiť">
          <font>
             <Font name="Comic Sans MS" size="12.0" />
          </font></Button>
+      <Label layoutX="135.0" layoutY="318.0" text="Label" />
+      <Label layoutX="386.0" layoutY="318.0" text="Label" />
+      <Label layoutX="642.0" layoutY="318.0" text="Label" />
+      <Label layoutX="135.0" layoutY="551.0" text="Label" />
+      <Label layoutX="386.0" layoutY="551.0" text="Label" />
+      <Label layoutX="642.0" layoutY="551.0" text="Label" />
     </children>
 
 </AnchorPane>

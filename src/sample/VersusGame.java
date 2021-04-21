@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
@@ -26,6 +27,8 @@ public class VersusGame implements Initializable {
     public AnchorPane pause;
     public BorderPane menu;
     public AnchorPane koniec;
+    public Label vitaz;
+    public ImageView pauseTlacitko;
 
     @FXML
     AnchorPane panel;
@@ -139,8 +142,17 @@ public class VersusGame implements Initializable {
                             skore.setText(bodyHrac + " : " + bodyPocitac);
                         }
 
-                        if (bodyHrac == 5 || bodyPocitac == 5){
+                        if (bodyHrac == 5){
                             stop();
+                            pauseTlacitko.setVisible(false);
+                            vitaz.setText("Vyhral hráč číslo 1");
+                            koniec.setVisible(true);
+                        }
+
+                        if (bodyPocitac == 5){
+                            stop();
+                            pauseTlacitko.setVisible(false);
+                            vitaz.setText("Vyhral hráč číslo 2");
                             koniec.setVisible(true);
                         }
 
@@ -166,8 +178,8 @@ public class VersusGame implements Initializable {
     }
 
     public void back(ActionEvent actionEvent) throws IOException {
+        pokracuj = true;
         BorderPane pane = FXMLLoader.load(getClass().getResource("layout/menu.fxml"));
         menu.getChildren().setAll(pane);
-        pokracuj = true;
     }
 }

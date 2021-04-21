@@ -6,6 +6,7 @@ import javafx.animation.AnimationTimer;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -21,6 +22,10 @@ public class Game implements Initializable {
     public Label money;
     public AnchorPane pause;
     public BorderPane menu;
+    public Label vitaz;
+    public AnchorPane koniec;
+    public ImageView pauseTlacitko;
+
 
     @FXML
     AnchorPane panel;
@@ -136,6 +141,20 @@ public class Game implements Initializable {
                             speedX = 2;
                             speedY = 2;
                             skore.setText(bodyHrac + " : " + bodyPocitac);
+                        }
+
+                        if (bodyHrac == 5){
+                            stop();
+                            pauseTlacitko.setVisible(false);
+                            vitaz.setText("Vyhral hráč číslo 1");
+                            koniec.setVisible(true);
+                        }
+
+                        if (bodyPocitac == 5){
+                            stop();
+                            pauseTlacitko.setVisible(false);
+                            vitaz.setText("Vyhral hráč číslo 2");
+                            koniec.setVisible(true);
                         }
 
                         lastSampleTime += period;
