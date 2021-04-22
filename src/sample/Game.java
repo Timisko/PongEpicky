@@ -15,9 +15,12 @@ import javafx.scene.shape.Rectangle;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 public class Game implements Initializable {
+    Random rd = new Random();
+
     public Label skore;
     public Label money;
     public AnchorPane pause;
@@ -25,16 +28,10 @@ public class Game implements Initializable {
     public Label vitaz;
     public AnchorPane koniec;
     public ImageView pauseTlacitko;
-
-
-    @FXML
-    AnchorPane panel;
-    @FXML
-    Circle lopta;
-    @FXML
-    Rectangle Left;
-    @FXML
-    Rectangle Right;
+    public AnchorPane panel;
+    public Circle lopta;
+    public Rectangle Left;
+    public Rectangle Right;
 
     public int peniaze = 0;
 
@@ -59,14 +56,22 @@ public class Game implements Initializable {
 
     static boolean pokracuj = true;
 
-    int speedX = 2;
-    int speedY = 2;
+    int [] zaciatok = {2, -2};
+
+    int speedX;
+    int speedY;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         /* lopta image
         lopta.setFill(new ImagePattern(new Image(Game.class.getResourceAsStream("res/fLopta.png"))));
          */
+
+        //nahodny vyber smeru lopty na zaciatku hry
+        speedX = zaciatok[rd.nextInt(2)];
+        speedY = zaciatok[rd.nextInt(2)];
+
+
             new AnimationTimer() {
                 final long period = 20000000;
                 long lastSampleTime = System.nanoTime();
@@ -80,8 +85,18 @@ public class Game implements Initializable {
                         lopta.setLayoutY(lopta.getLayoutY() + speedY);
 
                         //pohyb pocitaca
-                        Right.setLayoutY((lopta.getLayoutY() - vyskaHrac / 2));
+                        /*
+                        Right.setLayoutY((lopta.getLayoutY() - vyskaHrac / 2));*/
 
+                        //Computer
+                        if (lopta.getLayoutY() > Right.getLayoutY())
+                        {
+                            Right.setLayoutY(Right.getLayoutY() + 4);
+                        }
+                        else
+                        {
+                            Right.setLayoutY(Right.getLayoutY() - 4);
+                        }
 
                         //zamedzenie vychadzania hracov z herneho pola
                         if (Left.getLayoutY() <= 0) {
@@ -118,28 +133,34 @@ public class Game implements Initializable {
                         if (lopta.getLayoutY() + 10 > HEIGHT || lopta.getLayoutY() - 10 < 0) speedY *= -1;
 
                         //ak pocitac skoruje
-                        if (lopta.getLayoutX() < leftX - sirkaHrac) {
+                        if (lopta.getLayoutX() < leftX - lopta.getRadius()) {
                             bodyPocitac++;
-                            money.setText("" + peniaze);
                             lopta.setLayoutX(loptaX);
                             lopta.setLayoutY(loptaY);
                             Right.setLayoutY(startY);
                             Left.setLayoutY(startY);
-                            speedX = 2;
-                            speedY = 2;
+
+                            //nahodny vyber smeru lopty na zaciatku hry
+                            speedX = zaciatok[rd.nextInt(2)];
+                            speedY = zaciatok[rd.nextInt(2)];
+
                             skore.setText(bodyHrac + " : " + bodyPocitac);
                         }
 
                         //ak hrac skoruje
-                        if (lopta.getLayoutX() > rightX + sirkaHrac) {
+                        if (lopta.getLayoutX() > rightX + lopta.getRadius()) {
                             bodyHrac++;
                             peniaze += 10;
+                            money.setText(peniaze + "");
                             lopta.setLayoutX(loptaX);
                             lopta.setLayoutY(loptaY);
                             Right.setLayoutY(startY);
                             Left.setLayoutY(startY);
-                            speedX = 2;
-                            speedY = 2;
+
+                            //nahodny vyber smeru lopty na zaciatku hry
+                            speedX = zaciatok[rd.nextInt(2)];
+                            speedY = zaciatok[rd.nextInt(2)];
+
                             skore.setText(bodyHrac + " : " + bodyPocitac);
                         }
 

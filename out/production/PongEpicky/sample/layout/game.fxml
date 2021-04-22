@@ -24,7 +24,7 @@
                   <Image url="@../res/dollar.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="60.0" fitWidth="45.0" layoutX="14.0" layoutY="28.0" onMouseClicked="#pauza" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="pauseTlacitko" fitHeight="60.0" fitWidth="45.0" layoutX="14.0" layoutY="28.0" onMouseClicked="#pauza" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../res/pause.png" />
                </image>
@@ -47,6 +47,24 @@
                      <font>
                         <Font name="Comic Sans MS" size="18.0" />
                      </font></Button>
+               </children></AnchorPane>
+            <AnchorPane fx:id="koniec" layoutY="-1.0" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: white;" visible="false">
+               <children>
+                  <Label layoutX="327.0" layoutY="14.0" text="Koniec hry">
+                     <font>
+                        <Font name="Comic Sans MS" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="vitaz" layoutX="313.0" layoutY="139.0" text="Vyhral hráč číslo">
+                     <font>
+                        <Font name="Comic Sans MS" size="20.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="275.0" layoutY="264.0" mnemonicParsing="false" onAction="#back" prefHeight="40" prefWidth="250" text="Návrat do hlavného menu">
+                     <font>
+                        <Font name="Comic Sans MS" size="18.0" />
+                     </font>
+                  </Button>
                </children></AnchorPane>
          </children>
       </AnchorPane>
