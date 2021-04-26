@@ -14,9 +14,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -35,6 +33,7 @@ public class Game implements Initializable {
     public Circle lopta;
     public Rectangle Left;
     public Rectangle Right;
+    public int peniazePomoc;
 
     public int peniaze = 0;
 
@@ -68,6 +67,11 @@ public class Game implements Initializable {
     int vitazneGoly = 5;
 
     public void load() throws IOException {
+        BufferedReader br2 = new BufferedReader(new FileReader("peniaze.txt"));
+        peniazePomoc = Integer.parseInt(br2.readLine());
+        peniaze += peniazePomoc;
+        money.setText(""+peniaze);
+        br2.close();
         BufferedReader br = new BufferedReader(new FileReader("nastavenia.txt"));
         while (true){
             String s = br.readLine();
@@ -84,7 +88,6 @@ public class Game implements Initializable {
             if (s.charAt(0) == 'T'){
                 narocnost = 6;
             }
-
         }
     }
 
@@ -223,6 +226,7 @@ public class Game implements Initializable {
                             pauseTlacitko.setVisible(false);
                             vitaz.setText("Vyhral hráč číslo 2");
                             koniec.setVisible(true);
+
                         }
 
                         lastSampleTime += period;
@@ -245,9 +249,17 @@ public class Game implements Initializable {
         pause.setVisible(false);
     }
 
+    public void zapis() throws IOException {
+        peniazePomoc = peniaze;
+        BufferedWriter bw = new BufferedWriter(new FileWriter("peniaze.txt"));
+        bw.write(""+peniazePomoc);
+        bw.close();
+    }
+
     public void back(ActionEvent actionEvent) throws IOException {
         BorderPane pane = FXMLLoader.load(getClass().getResource("layout/menu.fxml"));
         menu.getChildren().setAll(pane);
+        zapis();
         pokracuj = true;
     }
 }

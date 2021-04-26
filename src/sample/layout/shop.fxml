@@ -18,11 +18,11 @@
             <Font name="Comic Sans MS" size="40.0" />
          </font>
       </Text>
-      <Label layoutX="667.0" layoutY="35.0" text="0">
+      <Label fx:id="money" layoutX="662.0" layoutY="37.0" text="0">
          <font>
             <Font name="Comic Sans MS" size="24.0" />
          </font></Label>
-      <ImageView fitHeight="24.0" fitWidth="28.0" layoutX="688.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="24.0" fitWidth="28.0" layoutX="632.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../res/dollar.png" />
          </image></ImageView>

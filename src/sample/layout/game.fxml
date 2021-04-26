@@ -15,11 +15,11 @@
                   <Font name="Comic Sans MS" size="30.0" />
                </font>
             </Label>
-            <Label fx:id="money" layoutX="724.0" layoutY="10.0" text="0">
+            <Label fx:id="money" layoutX="710.0" layoutY="11.0" text="0">
                <font>
                   <Font name="Comic Sans MS" size="24.0" />
                </font></Label>
-            <ImageView fitHeight="24.0" fitWidth="28.0" layoutX="762.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="24.0" fitWidth="28.0" layoutX="680.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../res/dollar.png" />
                </image>

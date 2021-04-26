@@ -24,7 +24,7 @@ public class Settings implements Initializable {
     public ComboBox<String> loptaVyber;
 
     public void load() throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader("nastavenia.txt"));
+        BufferedReader br = new BufferedReader(new FileReader("nastavenia.txt.txt"));
 
         String s = br.readLine();
 
@@ -58,7 +58,7 @@ public class Settings implements Initializable {
     }
 
     public void setObtiaznost(ActionEvent actionEvent) throws IOException {
-        BufferedWriter bw = new BufferedWriter(new FileWriter("nastavenia.txt"));
+        BufferedWriter bw = new BufferedWriter(new FileWriter("nastavenia.txt.txt"));
 
         switch (obtiaznostVyber.getValue()) {
             case "Ľahká" -> {

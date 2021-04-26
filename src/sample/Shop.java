@@ -1,16 +1,22 @@
 package sample;
 
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.shape.Circle;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class Shop {
+public class Shop implements Initializable {
     public AnchorPane menu;
     public ImageView buy2;
     public ImageView buy3;
@@ -24,6 +30,23 @@ public class Shop {
     public ImageView buy5;
     public ImageView buy6;
     public Circle backgroundMask6;
+    public Label money;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void load() throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader("peniaze.txt"));
+        int peniaze = Integer.parseInt(br.readLine());
+        money.setText(""+peniaze);
+    }
+
 
     public void back(MouseEvent mouseEvent) throws IOException {
         BorderPane pane = FXMLLoader.load(getClass().getResource("layout/menu.fxml"));
@@ -121,4 +144,6 @@ public class Shop {
         buy5.setVisible(false);
         buy6.setVisible(true);
     }
+
+
 }
