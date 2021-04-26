@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane id="menu" fx:id="menu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Menu">
+   <center>
+      <AnchorPane prefHeight="400.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox layoutX="200.0" layoutY="25.0" prefHeight="164.0" prefWidth="400.0">
+                <children>
+                    <Button mnemonicParsing="false" onAction="#herneOkno" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: white;" text="Hrať">
+                        <VBox.margin>
+                            <Insets left="50.0" />
+                        </VBox.margin>
+                     <font>
+                        <Font name="Comic Sans MS" size="20.0" />
+                     </font></Button>
+                    <Button mnemonicParsing="false" onAction="#obchodOkno" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: white;" text="Obchod">
+                        <VBox.margin>
+                            <Insets left="50.0" top="20.0" />
+                        </VBox.margin>
+                     <font>
+                        <Font name="Comic Sans MS" size="20.0" />
+                     </font></Button>
+                  <Button mnemonicParsing="false" onAction="#nastaveniaOkno" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: white;" text="Nastavenia">
+                    <VBox.margin>
+                        <Insets left="50.0" top="20.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font name="Comic Sans MS" size="20.0" />
+                    </font></Button>
+                    <Button mnemonicParsing="false" onAction="#exit" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: white;" text="Koniec">
+                        <VBox.margin>
+                            <Insets left="50.0" top="20.0" />
+                        </VBox.margin>
+                     <font>
+                        <Font name="Comic Sans MS" size="20.0" />
+                     </font></Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="158.0" fitWidth="279.0" layoutX="266.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../res/pongLogo.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="150.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="zvuk" fitHeight="70.0" fitWidth="70.0" layoutX="20.0" layoutY="70.0" onMouseClicked="#zmenZvuk" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../res/soundon.png" />
+               </image></ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="710.0" layoutY="70.0" onMouseClicked="#infoOkno" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../res/info.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+   </bottom>
+</BorderPane>
