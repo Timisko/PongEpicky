@@ -23,8 +23,6 @@ public class Settings implements Initializable {
     public ComboBox<String> obtiaznostVyber;
     public ComboBox<String> pozadieVyber;
     public ComboBox<String> loptaVyber;
-    public CheckBox check5;
-    public CheckBox check10;
 
     String dlzkaHry;
     String obtiaznost;
@@ -35,13 +33,6 @@ public class Settings implements Initializable {
         BufferedReader br = new BufferedReader(new FileReader("nastavenia.txt"));
 
         dlzkaHry = br.readLine();
-
-        if (dlzkaHry.equals("5")){
-            check5.setSelected(true);
-        }
-        else if (dlzkaHry.equals("10")){
-            check10.setSelected(true);
-        }
 
         obtiaznost = br.readLine();
 
@@ -88,19 +79,6 @@ public class Settings implements Initializable {
         }
     }
 
-    public void checkBoxy(ActionEvent actionEvent){
-        if (check5.isSelected()){
-            check5.setSelected(true);
-            check10.setSelected(false);
-            dlzkaHry = "5";
-        }
-        if (check10.isSelected()){
-            check5.setSelected(false);
-            check10.setSelected(true);
-            dlzkaHry = "10";
-        }
-    }
-
     public void setPozadie(ActionEvent actionEvent) {
 
     }
@@ -115,5 +93,13 @@ public class Settings implements Initializable {
         bw.newLine();
         bw.write(obtiaznost);
         bw.close();
+    }
+
+    public void nastavDlzku5(ActionEvent actionEvent) {
+        dlzkaHry = "5";
+    }
+
+    public void nastavDlzku10(ActionEvent actionEvent) {
+        dlzkaHry = "10";
     }
 }

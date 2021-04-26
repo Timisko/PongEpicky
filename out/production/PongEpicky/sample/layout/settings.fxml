@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -30,15 +31,10 @@
             <Font name="Comic Sans MS" size="24.0" />
          </font>
       </Label>
-      <CheckBox fx:id="check5" layoutX="339.0" layoutY="150.0" mnemonicParsing="false" onAction="#checkBoxy" prefHeight="35.0" prefWidth="36.0" text="5">
-         <font>
-            <Font name="Comic Sans MS" size="14.0" />
-         </font></CheckBox>
-      <CheckBox fx:id="check10" layoutX="397.0" layoutY="150.0" mnemonicParsing="false" onAction="#checkBoxy" prefHeight="35.0" prefWidth="44.0" text="10">
-         <font>
-            <Font name="Comic Sans MS" size="14.0" />
-         </font></CheckBox>
-      <ComboBox fx:id="obtiaznostVyber" layoutX="313.0" layoutY="250.0" onAction="#setObtiaznost" prefWidth="150.0" promptText="Ľahká" />
+      <ComboBox fx:id="obtiaznostVyber" layoutX="313.0" layoutY="250.0" onAction="#setObtiaznost" prefWidth="150.0" promptText="Ľahká">
+         <effect>
+            <DropShadow />
+         </effect></ComboBox>
       <Label layoutX="346.0" layoutY="300.0" text="Pozadie">
          <font>
             <Font name="Comic Sans MS" size="24.0" />
@@ -48,8 +44,30 @@
          <font>
             <Font name="Comic Sans MS" size="24.0" />
          </font></Label>
-      <ComboBox fx:id="pozadieVyber" layoutX="313.0" layoutY="350.0" onAction="#setPozadie" prefWidth="150.0" promptText="Čierna" />
-      <ComboBox fx:id="loptaVyber" layoutX="313.0" layoutY="450.0" onAction="#setLopta" prefWidth="150.0" promptText="Biela" />
+      <ComboBox fx:id="pozadieVyber" layoutX="313.0" layoutY="350.0" onAction="#setPozadie" prefWidth="150.0" promptText="Čierna">
+         <effect>
+            <DropShadow />
+         </effect></ComboBox>
+      <ComboBox fx:id="loptaVyber" layoutX="313.0" layoutY="450.0" onAction="#setLopta" prefWidth="150.0" promptText="Biela">
+         <effect>
+            <DropShadow />
+         </effect></ComboBox>
+      <Button layoutX="313.0" layoutY="155.0" mnemonicParsing="false" onAction="#nastavDlzku5" prefWidth="50" text="5">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="415.0" layoutY="155.0" mnemonicParsing="false" onAction="#nastavDlzku10" prefWidth="50" text="10">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font>
+      </Button>
     </children>
 
 </AnchorPane>
