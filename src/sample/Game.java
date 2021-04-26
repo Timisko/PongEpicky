@@ -10,9 +10,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Random;
@@ -20,6 +23,8 @@ import java.util.ResourceBundle;
 
 public class Game implements Initializable {
     Random rd = new Random();
+
+
 
     public Label skore;
     public Label money;
@@ -61,11 +66,56 @@ public class Game implements Initializable {
     int speedX;
     int speedY;
 
+    int narocnost = 4;
+
+    public void load() throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader("nastavenia.txt"));
+        while (true){
+            String s = br.readLine();
+
+            if (s == null)
+                break;
+
+            String [] splitS = s.split(",");
+
+            if (s.charAt(0) == 'L'){
+                narocnost = 2;
+            }
+            if (s.charAt(0) == 'S'){
+                narocnost = 4;
+            }
+            if (s.charAt(0) == 'T'){
+                narocnost = 6;
+            }
+
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         /* lopta image
         lopta.setFill(new ImagePattern(new Image(Game.class.getResourceAsStream("res/fLopta.png"))));
          */
+
+        //nastavenie narocnosti pocitaca
+        /*
+        if (nastavenia.getObtiaznost().equals("L")){
+            narocnost = 2;
+        }
+        else if (nastavenia.getObtiaznost().equals("S")){
+            narocnost = 4;
+        }
+        else if (nastavenia.getObtiaznost().equals("T")){
+            narocnost = 6;
+        }*/
+
+
+        System.out.println(narocnost);
 
         //nahodny vyber smeru lopty na zaciatku hry
         speedX = zaciatok[rd.nextInt(2)];
@@ -91,11 +141,11 @@ public class Game implements Initializable {
                         //Computer
                         if (lopta.getLayoutY() > Right.getLayoutY())
                         {
-                            Right.setLayoutY(Right.getLayoutY() + 4);
+                            Right.setLayoutY(Right.getLayoutY() + narocnost);
                         }
                         else
                         {
-                            Right.setLayoutY(Right.getLayoutY() - 4);
+                            Right.setLayoutY(Right.getLayoutY() - narocnost);
                         }
 
                         //zamedzenie vychadzania hracov z herneho pola
