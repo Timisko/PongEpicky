@@ -18,6 +18,7 @@
                 <Font name="Comic Sans MS" size="40.0" />
             </font>
         </Label>
+      <Pane layoutY="6.0" prefHeight="202.0" prefWidth="206.0" />
     </children>
 
 </AnchorPane>
