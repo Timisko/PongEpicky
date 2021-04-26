@@ -6,11 +6,13 @@ import javafx.animation.AnimationTimer;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
@@ -64,7 +66,7 @@ public class Game implements Initializable {
     int speedX;
     int speedY;
 
-    int narocnost;
+    int narocnost = 2;
     int vitazneGoly = 5;
 
     public void load() throws IOException {
@@ -95,9 +97,9 @@ public class Game implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        /* lopta image
-        lopta.setFill(new ImagePattern(new Image(Game.class.getResourceAsStream("res/fLopta.png"))));
-         */
+
+        //lopta image
+        lopta.setFill(new ImagePattern(new Image(Game.class.getResourceAsStream("res/bLopta.png"))));
 
         //nahodny vyber smeru lopty na zaciatku hry
         speedX = zaciatok[rd.nextInt(2)];

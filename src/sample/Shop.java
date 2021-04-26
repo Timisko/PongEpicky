@@ -28,8 +28,6 @@ public class Shop {
     public void back(MouseEvent mouseEvent) throws IOException {
         BorderPane pane = FXMLLoader.load(getClass().getResource("layout/menu.fxml"));
         menu.getChildren().setAll(pane);
-
-
     }
 
     public void background1(MouseEvent mouseEvent) {
