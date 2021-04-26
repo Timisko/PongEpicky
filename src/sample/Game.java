@@ -76,8 +76,6 @@ public class Game implements Initializable {
             if (s == null)
                 break;
 
-            String [] splitS = s.split(",");
-
             if (s.charAt(0) == 'L'){
                 narocnost = 2;
             }
@@ -101,21 +99,6 @@ public class Game implements Initializable {
         /* lopta image
         lopta.setFill(new ImagePattern(new Image(Game.class.getResourceAsStream("res/fLopta.png"))));
          */
-
-        //nastavenie narocnosti pocitaca
-        /*
-        if (nastavenia.getObtiaznost().equals("L")){
-            narocnost = 2;
-        }
-        else if (nastavenia.getObtiaznost().equals("S")){
-            narocnost = 4;
-        }
-        else if (nastavenia.getObtiaznost().equals("T")){
-            narocnost = 6;
-        }*/
-
-
-        System.out.println(narocnost);
 
         //nahodny vyber smeru lopty na zaciatku hry
         speedX = zaciatok[rd.nextInt(2)];
