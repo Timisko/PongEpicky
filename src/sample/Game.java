@@ -24,8 +24,6 @@ import java.util.ResourceBundle;
 public class Game implements Initializable {
     Random rd = new Random();
 
-
-
     public Label skore;
     public Label money;
     public AnchorPane pause;
@@ -66,7 +64,8 @@ public class Game implements Initializable {
     int speedX;
     int speedY;
 
-    int narocnost = 4;
+    int narocnost;
+    int vitazneGoly = 5;
 
     public void load() throws IOException {
         BufferedReader br = new BufferedReader(new FileReader("nastavenia.txt"));
@@ -118,10 +117,6 @@ public class Game implements Initializable {
                         lopta.setLayoutY(lopta.getLayoutY() + speedY);
 
                         //pohyb pocitaca
-                        /*
-                        Right.setLayoutY((lopta.getLayoutY() - vyskaHrac / 2));*/
-
-                        //Computer
                         if (lopta.getLayoutY() > Right.getLayoutY())
                         {
                             Right.setLayoutY(Right.getLayoutY() + narocnost);
@@ -197,14 +192,33 @@ public class Game implements Initializable {
                             skore.setText(bodyHrac + " : " + bodyPocitac);
                         }
 
-                        if (bodyHrac == 5){
+                        //ukoncenie hry ak hrac 1 dosiahne pozadovany pocet golov
+                        if (bodyHrac == vitazneGoly){
                             stop();
+
+                            if (narocnost == 2){
+                                peniaze += 25;
+                                money.setText(peniaze + "");
+                            }
+
+                            else if (narocnost == 4){
+                                peniaze += 50;
+                                money.setText(peniaze + "");
+                            }
+
+                            else if (narocnost == 6){
+                                peniaze += 100;
+                                money.setText(peniaze + "");
+                            }
+
                             pauseTlacitko.setVisible(false);
                             vitaz.setText("Vyhral hráč číslo 1");
                             koniec.setVisible(true);
+
                         }
 
-                        if (bodyPocitac == 5){
+                        //ukoncenie hry ak hrac 2 dosiahne pozadovany pocet golov
+                        if (bodyPocitac == vitazneGoly){
                             stop();
                             pauseTlacitko.setVisible(false);
                             vitaz.setText("Vyhral hráč číslo 2");
