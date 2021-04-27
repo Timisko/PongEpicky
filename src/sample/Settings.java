@@ -23,20 +23,97 @@ public class Settings implements Initializable {
     public ComboBox<String> pozadieVyber;
     public ComboBox<String> loptaVyber;
 
-    public void load() throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader("nastavenia.txt.txt"));
+    String dlzkaHry;
+    String obtiaznost;
+    String pozadie;
+    String lopta;
+    String odomknutePozadia;
+    String odomknuteLopty;
 
-        String s = br.readLine();
+    public void citaj() throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader("nastavenia.txt"));
 
-        if (s.charAt(0) == 'L'){
+        dlzkaHry = br.readLine();
+
+        obtiaznost = br.readLine();
+
+        if (obtiaznost.equals("L")){
             obtiaznostVyber.setPromptText("Ľahká");
         }
-        if (s.charAt(0) == 'S'){
+        if (obtiaznost.equals("S")){
             obtiaznostVyber.setPromptText("Stredná");
         }
-        if (s.charAt(0) == 'T'){
+        if (obtiaznost.equals("T")){
             obtiaznostVyber.setPromptText("Ťažká");
         }
+
+        pozadie = br.readLine();
+
+        if (pozadie.equals("C")){
+            pozadieVyber.setPromptText("Čierna");
+        }
+        if (pozadie.equals("F")){
+            pozadieVyber.setPromptText("Futbal");
+        }
+        if (pozadie.equals("B")){
+            pozadieVyber.setPromptText("Basketbal");
+        }
+        if (pozadie.equals("V")){
+            pozadieVyber.setPromptText("Volejbal");
+        }
+
+        lopta = br.readLine();
+
+        if (lopta.equals("C")){
+            loptaVyber.setPromptText("Biela");
+        }
+        if (lopta.equals("F")){
+            loptaVyber.setPromptText("Futbal");
+        }
+        if (lopta.equals("B")){
+            loptaVyber.setPromptText("Basketbal");
+        }
+        if (lopta.equals("V")){
+            loptaVyber.setPromptText("Volejbal");
+        }
+
+        odomknutePozadia = br.readLine();
+
+        switch (odomknutePozadia){
+            case "000":{
+
+            }
+
+            case "100":{
+
+            }
+
+            case "110":{
+
+            }
+
+            case "111":{
+
+            }
+
+            case "010":{
+
+            }
+
+            case "011":{
+
+            }
+
+            case "001":{
+
+            }
+
+            case "101":{
+
+            }
+        }
+
+        odomknuteLopty = br.readLine();
 
     }
 
@@ -46,41 +123,92 @@ public class Settings implements Initializable {
         pozadieVyber.setItems(pozadia);
         loptaVyber.setItems(lopty);
         try {
-            load();
+            citaj();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public void back(MouseEvent mouseEvent) throws IOException {
+        zapis();
         BorderPane pane = FXMLLoader.load(getClass().getResource("layout/menu.fxml"));
         menu.getChildren().setAll(pane);
     }
 
-    public void setObtiaznost(ActionEvent actionEvent) throws IOException {
-        BufferedWriter bw = new BufferedWriter(new FileWriter("nastavenia.txt.txt"));
-
+    public void setObtiaznost(ActionEvent actionEvent){
         switch (obtiaznostVyber.getValue()) {
             case "Ľahká" -> {
-                bw.write("L");
+                obtiaznost = "L";
             }
             case "Stredná" -> {
-                bw.write("S");
+                obtiaznost = "S";
             }
             case "Ťažká" -> {
-                bw.write("T");
+                obtiaznost = "T";
             }
         }
-
-        bw.close();
     }
 
-
     public void setPozadie(ActionEvent actionEvent) {
-
+        switch (pozadieVyber.getValue()) {
+            case "Čierna" -> {
+                pozadie = "C";
+            }
+            case "Futbal" -> {
+                pozadie = "F";
+            }
+            case "Basketbal" -> {
+                pozadie = "B";
+            }
+            case "Volejbal" -> {
+                pozadie = "V";
+            }
+        }
     }
 
     public void setLopta(ActionEvent actionEvent) {
+        switch (loptaVyber.getValue()) {
+            case "Biela" -> {
+                lopta = "C";
+            }
+            case "Futbal" -> {
+                lopta = "F";
+            }
+            case "Basketbal" -> {
+                lopta = "B";
+            }
+            case "Volejbal" -> {
+                lopta = "V";
+            }
+        }
+    }
 
+    public void zapis() throws IOException{
+        BufferedWriter bw = new BufferedWriter(new FileWriter("nastavenia.txt"));
+        bw.write(dlzkaHry);
+        bw.newLine();
+
+        bw.write(obtiaznost);
+        bw.newLine();
+
+        bw.write(pozadie);
+        bw.newLine();
+
+        bw.write(lopta);
+        bw.newLine();
+
+        bw.write(odomknutePozadia);
+        bw.newLine();
+
+        bw.write(odomknuteLopty);
+        bw.close();
+    }
+
+    public void nastavDlzku5(ActionEvent actionEvent) {
+        dlzkaHry = "5";
+    }
+
+    public void nastavDlzku10(ActionEvent actionEvent) {
+        dlzkaHry = "10";
     }
 }

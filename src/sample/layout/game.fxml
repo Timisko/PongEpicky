@@ -34,6 +34,7 @@
    <center>
       <AnchorPane id="panel" fx:id="panel" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
          <children>
+            <ImageView fx:id="pozadie" fitHeight="500.0" fitWidth="800.0" pickOnBounds="true" />
             <Rectangle id="Left" fx:id="Left" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="70.0" layoutX="10.0" layoutY="215.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
             <Rectangle id="Right" fx:id="Right" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="70.0" layoutX="780.0" layoutY="215.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
             <Circle id="lopta" fx:id="lopta" fill="WHITE" layoutX="400.0" layoutY="250.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />

@@ -6,11 +6,12 @@ import javafx.animation.AnimationTimer;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
@@ -20,6 +21,7 @@ import java.util.Random;
 import java.util.ResourceBundle;
 
 public class Game implements Initializable {
+    public ImageView pozadie;
     Random rd = new Random();
 
     public Label skore;
@@ -63,7 +65,7 @@ public class Game implements Initializable {
     int speedX;
     int speedY;
 
-    int narocnost;
+    int narocnost = 2;
     int vitazneGoly = 5;
 
     public void load() throws IOException {
@@ -72,24 +74,35 @@ public class Game implements Initializable {
         peniaze += peniazePomoc;
         money.setText(""+peniaze);
         br2.close();
+
         BufferedReader br = new BufferedReader(new FileReader("nastavenia.txt"));
+
         while (true){
             String s = br.readLine();
 
             if (s == null)
                 break;
 
-            if (s.charAt(0) == 'L'){
+            if (s.equals("L")){
                 narocnost = 2;
             }
-            if (s.charAt(0) == 'S'){
+            if (s.equals("S")){
                 narocnost = 4;
             }
-            if (s.charAt(0) == 'T'){
+            if (s.equals("T")){
                 narocnost = 6;
             }
+            if (s.equals("5")){
+                vitazneGoly = 5;
+            }
+            if (s.equals("10")){
+                vitazneGoly = 10;
+            }
         }
+
+        br.close();
     }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -98,14 +111,20 @@ public class Game implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        /* lopta image
-        lopta.setFill(new ImagePattern(new Image(Game.class.getResourceAsStream("res/fLopta.png"))));
-         */
+
+        //lopta image
+        lopta.setFill(new ImagePattern(new Image(Game.class.getResourceAsStream("res/bLopta.png"))));
+
+
+
+        //pozadie
+        Image image = new Image(Game.class.getResourceAsStream("res/bPozadie.jpg"));
+
+        pozadie.setImage(image);
 
         //nahodny vyber smeru lopty na zaciatku hry
         speedX = zaciatok[rd.nextInt(2)];
         speedY = zaciatok[rd.nextInt(2)];
-
 
             new AnimationTimer() {
                 final long period = 20000000;
