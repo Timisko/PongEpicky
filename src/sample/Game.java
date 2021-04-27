@@ -68,6 +68,9 @@ public class Game implements Initializable {
     int narocnost = 2;
     int vitazneGoly = 5;
 
+    String pozadieCesta = "";
+    String loptaCesta = "";
+
     public void load() throws IOException {
         BufferedReader br2 = new BufferedReader(new FileReader("peniaze.txt"));
         peniazePomoc = Integer.parseInt(br2.readLine());
@@ -83,6 +86,15 @@ public class Game implements Initializable {
             if (s == null)
                 break;
 
+            //dlzka hry
+            if (s.equals("5")){
+                vitazneGoly = 5;
+            }
+            if (s.equals("10")){
+                vitazneGoly = 10;
+            }
+
+            //narocnost
             if (s.equals("L")){
                 narocnost = 2;
             }
@@ -92,11 +104,33 @@ public class Game implements Initializable {
             if (s.equals("T")){
                 narocnost = 6;
             }
-            if (s.equals("5")){
-                vitazneGoly = 5;
+
+            //pozadie
+            if (s.equals("pC")){
+                pozadieCesta = "res/cPozadie.jpg";
             }
-            if (s.equals("10")){
-                vitazneGoly = 10;
+            if (s.equals("pF")){
+                pozadieCesta = "res/fPozadie.jpg";
+            }
+            if (s.equals("pB")){
+                pozadieCesta = "res/bPozadie.jpg";
+            }
+            if (s.equals("pV")){
+                pozadieCesta = "res/vPozadie.jpg";
+            }
+
+            //lopta
+            if (s.equals("lC")){
+                loptaCesta = "res/cLopta.png";
+            }
+            if (s.equals("lF")){
+                loptaCesta = "res/fLopta.png";
+            }
+            if (s.equals("lB")) {
+                loptaCesta = "res/bLopta.png";
+            }
+            if (s.equals("lV")) {
+                loptaCesta = "res/vLopta.png";
             }
         }
 
@@ -112,15 +146,11 @@ public class Game implements Initializable {
             e.printStackTrace();
         }
 
-        //lopta image
-        lopta.setFill(new ImagePattern(new Image(Game.class.getResourceAsStream("res/bLopta.png"))));
-
-
-
         //pozadie
-        Image image = new Image(Game.class.getResourceAsStream("res/bPozadie.jpg"));
+        pozadie.setImage(new Image(Game.class.getResourceAsStream(pozadieCesta)));
 
-        pozadie.setImage(image);
+        //lopta image
+        lopta.setFill(new ImagePattern(new Image(Game.class.getResourceAsStream(loptaCesta))));
 
         //nahodny vyber smeru lopty na zaciatku hry
         speedX = zaciatok[rd.nextInt(2)];

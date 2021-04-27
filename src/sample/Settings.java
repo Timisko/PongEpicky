@@ -16,8 +16,8 @@ import java.util.ResourceBundle;
 
 public class Settings implements Initializable {
     public ObservableList<String> obtiaznosti = FXCollections.observableArrayList("Ľahká", "Stredná", "Ťažká");
-    public ObservableList<String> pozadia = FXCollections.observableArrayList("Čierna", "Futbal", "Basketbal", "Volejbal");
-    public ObservableList<String> lopty = FXCollections.observableArrayList("Biela", "Futbal", "Basketbal", "Volejbal");
+    public ObservableList<String> pozadia;
+    public ObservableList<String> lopty;
     public AnchorPane menu;
     public ComboBox<String> obtiaznostVyber;
     public ComboBox<String> pozadieVyber;
@@ -49,84 +49,99 @@ public class Settings implements Initializable {
 
         pozadie = br.readLine();
 
-        if (pozadie.equals("C")){
+        if (pozadie.equals("pC")){
             pozadieVyber.setPromptText("Čierna");
         }
-        if (pozadie.equals("F")){
+        if (pozadie.equals("pF")){
             pozadieVyber.setPromptText("Futbal");
         }
-        if (pozadie.equals("B")){
+        if (pozadie.equals("pB")){
             pozadieVyber.setPromptText("Basketbal");
         }
-        if (pozadie.equals("V")){
+        if (pozadie.equals("pV")){
             pozadieVyber.setPromptText("Volejbal");
         }
 
         lopta = br.readLine();
 
-        if (lopta.equals("C")){
+        if (lopta.equals("lC")){
             loptaVyber.setPromptText("Biela");
         }
-        if (lopta.equals("F")){
+        if (lopta.equals("lF")){
             loptaVyber.setPromptText("Futbal");
         }
-        if (lopta.equals("B")){
+        if (lopta.equals("lB")){
             loptaVyber.setPromptText("Basketbal");
         }
-        if (lopta.equals("V")){
+        if (lopta.equals("lV")){
             loptaVyber.setPromptText("Volejbal");
         }
 
         odomknutePozadia = br.readLine();
 
-        switch (odomknutePozadia){
-            case "000":{
-
-            }
-
-            case "100":{
-
-            }
-
-            case "110":{
-
-            }
-
-            case "111":{
-
-            }
-
-            case "010":{
-
-            }
-
-            case "011":{
-
-            }
-
-            case "001":{
-
-            }
-
-            case "101":{
-
-            }
+        if (odomknutePozadia.equals("000")){
+            pozadia = FXCollections.observableArrayList("Čierna");
+        }
+        if (odomknutePozadia.equals("100")){
+            pozadia = FXCollections.observableArrayList("Čierna", "Futbal");
+        }
+        if (odomknutePozadia.equals("110")){
+            pozadia = FXCollections.observableArrayList("Čierna", "Futbal", "Basketbal");
+        }
+        if (odomknutePozadia.equals("111")){
+            pozadia = FXCollections.observableArrayList("Čierna", "Futbal", "Basketbal", "Volejbal");
+        }
+        if (odomknutePozadia.equals("010")){
+            pozadia = FXCollections.observableArrayList("Čierna", "Basketbal");
+        }
+        if (odomknutePozadia.equals("011")){
+            pozadia = FXCollections.observableArrayList("Čierna", "Basketbal", "Volejbal");
+        }
+        if (odomknutePozadia.equals("001")){
+            pozadia = FXCollections.observableArrayList("Čierna", "Volejbal");
+        }
+        if (odomknutePozadia.equals("101")){
+            pozadia = FXCollections.observableArrayList("Čierna", "Futbal", "Volejbal");
         }
 
         odomknuteLopty = br.readLine();
 
+        if (odomknuteLopty.equals("000")){
+            lopty = FXCollections.observableArrayList("Biela");
+        }
+        if (odomknuteLopty.equals("100")){
+            lopty = FXCollections.observableArrayList("Biela", "Futbal");
+        }
+        if (odomknuteLopty.equals("110")){
+            lopty = FXCollections.observableArrayList("Biela", "Futbal", "Basketbal");
+        }
+        if (odomknuteLopty.equals("111")){
+            lopty = FXCollections.observableArrayList("Biela", "Futbal", "Basketbal", "Volejbal");
+        }
+        if (odomknuteLopty.equals("010")){
+            lopty = FXCollections.observableArrayList("Biela", "Basketbal");
+        }
+        if (odomknuteLopty.equals("011")){
+            lopty = FXCollections.observableArrayList("Biela", "Basketbal", "Volejbal");
+        }
+        if (odomknuteLopty.equals("001")){
+            lopty = FXCollections.observableArrayList("Biela", "Volejbal");
+        }
+        if (odomknuteLopty.equals("101")){
+            lopty = FXCollections.observableArrayList("Biela", "Futbal", "Volejbal");
+        }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
-        obtiaznostVyber.setItems(obtiaznosti);
-        pozadieVyber.setItems(pozadia);
-        loptaVyber.setItems(lopty);
         try {
             citaj();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        obtiaznostVyber.setItems(obtiaznosti);
+        pozadieVyber.setItems(pozadia);
+        loptaVyber.setItems(lopty);
     }
 
     public void back(MouseEvent mouseEvent) throws IOException {
@@ -152,16 +167,16 @@ public class Settings implements Initializable {
     public void setPozadie(ActionEvent actionEvent) {
         switch (pozadieVyber.getValue()) {
             case "Čierna" -> {
-                pozadie = "C";
+                pozadie = "pC";
             }
             case "Futbal" -> {
-                pozadie = "F";
+                pozadie = "pF";
             }
             case "Basketbal" -> {
-                pozadie = "B";
+                pozadie = "pB";
             }
             case "Volejbal" -> {
-                pozadie = "V";
+                pozadie = "pV";
             }
         }
     }
@@ -169,16 +184,16 @@ public class Settings implements Initializable {
     public void setLopta(ActionEvent actionEvent) {
         switch (loptaVyber.getValue()) {
             case "Biela" -> {
-                lopta = "C";
+                lopta = "lC";
             }
             case "Futbal" -> {
-                lopta = "F";
+                lopta = "lF";
             }
             case "Basketbal" -> {
-                lopta = "B";
+                lopta = "lB";
             }
             case "Volejbal" -> {
-                lopta = "V";
+                lopta = "lV";
             }
         }
     }
