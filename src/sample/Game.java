@@ -9,8 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
@@ -66,7 +65,7 @@ public class Game implements Initializable {
     int speedY;
 
     int narocnost = 2;
-    int vitazneGoly = 1;
+    int vitazneGoly = 5;
 
     public void load() throws IOException {
         BufferedReader br2 = new BufferedReader(new FileReader("peniaze.txt"));
@@ -83,21 +82,19 @@ public class Game implements Initializable {
             if (s == null)
                 break;
 
-            if (s.charAt(0) == 'L'){
+            if (s.equals("L")){
                 narocnost = 2;
             }
-            if (s.charAt(0) == 'S'){
+            if (s.equals("S")){
                 narocnost = 4;
             }
-            if (s.charAt(0) == 'T'){
+            if (s.equals("T")){
                 narocnost = 6;
             }
-
-            if (s.charAt(0) == '5'){
+            if (s.equals("5")){
                 vitazneGoly = 5;
             }
-
-            if (s.charAt(0) == '1'){
+            if (s.equals("10")){
                 vitazneGoly = 10;
             }
         }
@@ -115,12 +112,30 @@ public class Game implements Initializable {
         }
 
         //lopta image
+        /*
         lopta.setFill(new ImagePattern(new Image(Game.class.getResourceAsStream("res/bLopta.png"))));
+         */
+
+        /*
+        Image image = new Image(Game.class.getResourceAsStream("res/vPozadie.jpg"));
+
+
+
+        // create a background image
+        BackgroundImage backgroundimage = new BackgroundImage(image,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.CENTER,
+                BackgroundSize.DEFAULT);
+
+        // create Background
+        Background background = new Background(backgroundimage);
+
+        panel.setBackground(background);*/
 
         //nahodny vyber smeru lopty na zaciatku hry
         speedX = zaciatok[rd.nextInt(2)];
         speedY = zaciatok[rd.nextInt(2)];
-
 
             new AnimationTimer() {
                 final long period = 20000000;
