@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="menu" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Settings">
+
+    <children>
+        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="24.0" layoutY="26.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../res/back.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="286.0" layoutY="24.0" text="Nastavenia">
+            <font>
+                <Font name="Comic Sans MS" size="40.0" />
+            </font>
+        </Label>
+
+        
+      <Label layoutX="264.0" layoutY="200.0" text="Obtiažnosť protivníka">
+         <font>
+            <Font name="Comic Sans MS" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="334.0" layoutY="100.0" text="Dĺžka hry">
+         <font>
+            <Font name="Comic Sans MS" size="24.0" />
+         </font>
+      </Label>
+      <CheckBox layoutX="339.0" layoutY="150.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="36.0" text="5">
+         <font>
+            <Font name="Comic Sans MS" size="14.0" />
+         </font></CheckBox>
+      <CheckBox layoutX="397.0" layoutY="150.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="44.0" text="10">
+         <font>
+            <Font name="Comic Sans MS" size="14.0" />
+         </font></CheckBox>
+      <ComboBox fx:id="obtiaznostVyber" layoutX="313.0" layoutY="250.0" onAction="#setObtiaznost" prefWidth="150.0" />
+      <Label layoutX="346.0" layoutY="300.0" text="Pozadie">
+         <font>
+            <Font name="Comic Sans MS" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="357.0" layoutY="400.0" text="Lopta">
+         <font>
+            <Font name="Comic Sans MS" size="24.0" />
+         </font></Label>
+      <ComboBox fx:id="pozadieVyber" layoutX="313.0" layoutY="350.0" onAction="#setPozadie" prefWidth="150.0" />
+      <ComboBox fx:id="loptaVyber" layoutX="313.0" layoutY="450.0" onAction="#setLopta" prefWidth="150.0" />
+    </children>
+
+</AnchorPane>
