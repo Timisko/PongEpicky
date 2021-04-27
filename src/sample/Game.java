@@ -21,6 +21,7 @@ import java.util.Random;
 import java.util.ResourceBundle;
 
 public class Game implements Initializable {
+    public ImageView pozadie;
     Random rd = new Random();
 
     public Label skore;
@@ -112,26 +113,14 @@ public class Game implements Initializable {
         }
 
         //lopta image
-        /*
         lopta.setFill(new ImagePattern(new Image(Game.class.getResourceAsStream("res/bLopta.png"))));
-         */
-
-        /*
-        Image image = new Image(Game.class.getResourceAsStream("res/vPozadie.jpg"));
 
 
 
-        // create a background image
-        BackgroundImage backgroundimage = new BackgroundImage(image,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundPosition.CENTER,
-                BackgroundSize.DEFAULT);
+        //pozadie
+        Image image = new Image(Game.class.getResourceAsStream("res/bPozadie.jpg"));
 
-        // create Background
-        Background background = new Background(backgroundimage);
-
-        panel.setBackground(background);*/
+        pozadie.setImage(image);
 
         //nahodny vyber smeru lopty na zaciatku hry
         speedX = zaciatok[rd.nextInt(2)];
