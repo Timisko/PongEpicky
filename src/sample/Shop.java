@@ -56,6 +56,12 @@ public class Shop implements Initializable {
     public ImageView lF;
     public ImageView lB;
     public ImageView lV;
+    public ImageView pFk;
+    public ImageView pBk;
+    public ImageView pVk;
+    public ImageView lFk;
+    public ImageView lBk;
+    public ImageView lVk;
 
 
     String dlzkaHry;
@@ -87,6 +93,9 @@ public class Shop implements Initializable {
             dollar1.setVisible(true);
             dollar2.setVisible(true);
             dollar3.setVisible(true);
+            pFk.setVisible(false);
+            pBk.setVisible(false);
+            pVk.setVisible(false);
         }
         if (odomknutePozadia.equals("100")){
             pF.setVisible(false);
@@ -101,6 +110,9 @@ public class Shop implements Initializable {
             dollar1.setVisible(false);
             dollar2.setVisible(true);
             dollar3.setVisible(true);
+            pFk.setVisible(true);
+            pBk.setVisible(false);
+            pVk.setVisible(false);
 
         }
         if (odomknutePozadia.equals("110")){
@@ -116,6 +128,9 @@ public class Shop implements Initializable {
             dollar1.setVisible(false);
             dollar2.setVisible(false);
             dollar3.setVisible(true);
+            pFk.setVisible(true);
+            pBk.setVisible(true);
+            pVk.setVisible(false);
         }
         if (odomknutePozadia.equals("111")){
             pF.setVisible(false);
@@ -130,6 +145,9 @@ public class Shop implements Initializable {
             dollar1.setVisible(false);
             dollar2.setVisible(false);
             dollar3.setVisible(false);
+            pFk.setVisible(true);
+            pBk.setVisible(true);
+            pVk.setVisible(true);
         }
         if (odomknutePozadia.equals("010")){
             pF.setVisible(true);
@@ -144,6 +162,9 @@ public class Shop implements Initializable {
             dollar1.setVisible(true);
             dollar2.setVisible(false);
             dollar3.setVisible(true);
+            pFk.setVisible(false);
+            pBk.setVisible(true);
+            pVk.setVisible(false);
         }
         if (odomknutePozadia.equals("011")){
             pF.setVisible(true);
@@ -158,6 +179,9 @@ public class Shop implements Initializable {
             dollar1.setVisible(true);
             dollar2.setVisible(false);
             dollar3.setVisible(false);
+            pFk.setVisible(false);
+            pBk.setVisible(true);
+            pVk.setVisible(true);
         }
         if (odomknutePozadia.equals("001")){
             pF.setVisible(true);
@@ -172,6 +196,9 @@ public class Shop implements Initializable {
             dollar1.setVisible(true);
             dollar2.setVisible(true);
             dollar3.setVisible(false);
+            pFk.setVisible(false);
+            pBk.setVisible(false);
+            pVk.setVisible(true);
         }
         if (odomknutePozadia.equals("101")){
             pF.setVisible(false);
@@ -186,6 +213,9 @@ public class Shop implements Initializable {
             dollar1.setVisible(false);
             dollar2.setVisible(true);
             dollar3.setVisible(false);
+            pFk.setVisible(true);
+            pBk.setVisible(false);
+            pVk.setVisible(true);
         }
 
         //nastavenie zobrazenia lopt, ktore mame uz kupene
@@ -202,6 +232,9 @@ public class Shop implements Initializable {
             dollar4.setVisible(true);
             dollar5.setVisible(true);
             dollar6.setVisible(true);
+            lFk.setVisible(false);
+            lBk.setVisible(false);
+            lVk.setVisible(false);
         }
         if (odomknuteLopty.equals("100")){
             lF.setVisible(false);
@@ -216,6 +249,9 @@ public class Shop implements Initializable {
             dollar4.setVisible(false);
             dollar5.setVisible(true);
             dollar6.setVisible(true);
+            lFk.setVisible(true);
+            lBk.setVisible(false);
+            lVk.setVisible(false);
         }
         if (odomknuteLopty.equals("110")){
             lF.setVisible(false);
@@ -230,6 +266,9 @@ public class Shop implements Initializable {
             dollar4.setVisible(false);
             dollar5.setVisible(false);
             dollar6.setVisible(true);
+            lFk.setVisible(true);
+            lBk.setVisible(true);
+            lVk.setVisible(false);
         }
         if (odomknuteLopty.equals("111")){
             lF.setVisible(false);
@@ -244,6 +283,9 @@ public class Shop implements Initializable {
             dollar4.setVisible(false);
             dollar5.setVisible(false);
             dollar6.setVisible(false);
+            lFk.setVisible(true);
+            lBk.setVisible(true);
+            lVk.setVisible(true);
         }
         if (odomknuteLopty.equals("010")){
             lF.setVisible(true);
@@ -258,6 +300,9 @@ public class Shop implements Initializable {
             dollar4.setVisible(true);
             dollar5.setVisible(false);
             dollar6.setVisible(true);
+            lFk.setVisible(false);
+            lBk.setVisible(true);
+            lVk.setVisible(false);
         }
         if (odomknuteLopty.equals("011")){
             lF.setVisible(true);
@@ -269,6 +314,9 @@ public class Shop implements Initializable {
             label4.setVisible(true);
             label5.setVisible(false);
             label6.setVisible(false);
+            lFk.setVisible(false);
+            lBk.setVisible(true);
+            lVk.setVisible(true);
         }
         if (odomknuteLopty.equals("001")){
             lF.setVisible(true);
@@ -283,6 +331,9 @@ public class Shop implements Initializable {
             dollar4.setVisible(true);
             dollar5.setVisible(true);
             dollar6.setVisible(false);
+            lFk.setVisible(false);
+            lBk.setVisible(false);
+            lVk.setVisible(true);
         }
         if (odomknuteLopty.equals("101")){
             lF.setVisible(false);
@@ -297,6 +348,9 @@ public class Shop implements Initializable {
             dollar4.setVisible(false);
             dollar5.setVisible(true);
             dollar6.setVisible(false);
+            lFk.setVisible(true);
+            lBk.setVisible(false);
+            lVk.setVisible(true);
         }
 
     }
