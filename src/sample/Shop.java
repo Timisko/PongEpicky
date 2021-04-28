@@ -534,7 +534,9 @@ public class Shop implements Initializable {
         BufferedWriter bout = new BufferedWriter(new FileWriter("nastavenia.txt"));
         BufferedWriter out = new BufferedWriter(new FileWriter("peniaze.txt"));
 
-        out.write(peniaze);
+        String lovelovemam=""+peniaze;
+        out.write(lovelovemam);
+        out.close();
 
         bout.write(dlzkaHry);
         bout.newLine();
@@ -555,11 +557,12 @@ public class Shop implements Initializable {
         if (n==10){odomknuteLopty=odomknute[0]+"1"+odomknute[2];}
         if (n==1){odomknuteLopty=odomknute[0]+""+odomknute[1]+"1";}
 
-        System.out.println(odomknutePozadia);
         BufferedWriter bout = new BufferedWriter(new FileWriter("nastavenia.txt"));
         BufferedWriter out = new BufferedWriter(new FileWriter("peniaze.txt"));
 
-        out.write(peniaze);
+        String lovelovemam=""+peniaze;
+        out.write(lovelovemam);
+        out.close();
 
         bout.write(dlzkaHry);
         bout.newLine();
