@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.shape.Circle;
 
@@ -36,27 +37,22 @@ public class Shop implements Initializable {
     public ImageView dollar1;
     public Label label1;
     public int peniaze;
-    public int pomoc1;
+    public int [] pomoc= new int[6];
     public ImageView tick2;
     public ImageView dollar2;
     public Label label2;
-    public int pomoc2;
     public ImageView dollar3;
     public Label label3;
     public ImageView tick3;
-    public int pomoc3;
     public ImageView tick4;
     public ImageView dollar4;
     public Label label4;
-    public int pomoc4;
     public ImageView tick5;
     public ImageView dollar5;
     public Label label5;
-    public int pomoc5;
     public ImageView tick6;
     public ImageView dollar6;
     public Label label6;
-    public int pomoc6;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -168,74 +164,53 @@ public class Shop implements Initializable {
         buy5.setVisible(false);
         buy6.setVisible(true);
     }
-
+    public void buyButton(ImageView dollar, Label label, ImageView tick, AnchorPane backgroundMask, ImageView buy)throws IOException{
+        dollar.setVisible(false); label.setVisible(false); tick.setVisible(true); backgroundMask.setBackground(null); buy.setImage(null);
+    }
+    public void buyButtonBall(ImageView dollar, Label label, ImageView tick, Circle backgroundMask, ImageView buy)throws IOException{
+        dollar.setVisible(false); label.setVisible(false); tick.setVisible(true); backgroundMask.setFill(null); backgroundMask.setStroke(null); buy.setImage(null);
+    }
 
     public void buyButton1(MouseEvent mouseEvent) throws IOException {
-        dollar1.setVisible(false);
-        label1.setVisible(false);
-        tick1.setVisible(true);
-        backgroundMask1.setBackground(null);
-        buy1.setImage(null);
-        if (pomoc1 < 1) { peniaze -= 150;}
+        buyButton(dollar1, label1, tick1, backgroundMask1, buy1);
+        if (pomoc[0] < 1) { peniaze -= 150;}
         money.setText(""+peniaze);
-        pomoc1++;
+        pomoc[0]++;
     }
 
-    public void buyButton2(MouseEvent mouseEvent) {
-        dollar2.setVisible(false);
-        label2.setVisible(false);
-        tick2.setVisible(true);
-        backgroundMask2.setBackground(null);
-        buy2.setImage(null);
-        if (pomoc2 < 1) { peniaze -= 150;}
+    public void buyButton2(MouseEvent mouseEvent) throws IOException{
+        buyButton(dollar2, label2, tick2, backgroundMask2, buy2);
+        if (pomoc[1] < 1) { peniaze -= 150;}
         money.setText(""+peniaze);
-        pomoc2++;
+        pomoc[1]++;
     }
 
-    public void buyButton3(MouseEvent mouseEvent) {
-        dollar3.setVisible(false);
-        label3.setVisible(false);
-        tick3.setVisible(true);
-        backgroundMask3.setBackground(null);
-        buy3.setImage(null);
-        if (pomoc3 < 1) { peniaze -= 150;}
+    public void buyButton3(MouseEvent mouseEvent) throws IOException{
+        buyButton(dollar3, label3, tick3, backgroundMask3, buy3);
+        if (pomoc[2] < 1) { peniaze -= 150;}
         money.setText(""+peniaze);
-        pomoc3++;
+        pomoc[2]++;
     }
 
-    public void buyButton4(MouseEvent mouseEvent) {
-        dollar4.setVisible(false);
-        label4.setVisible(false);
-        tick4.setVisible(true);
-        backgroundMask4.setFill(null);
-        backgroundMask4.setStroke(null);
-        buy4.setImage(null);
-        if (pomoc4 < 1) { peniaze -= 150;}
+    public void buyButton4(MouseEvent mouseEvent) throws IOException{
+        buyButtonBall(dollar4, label4, tick4, backgroundMask4, buy4);
+        if (pomoc[3] < 1) { peniaze -= 150;}
         money.setText(""+peniaze);
-        pomoc4++;
+        pomoc[3]++;
     }
 
-    public void buyButton5(MouseEvent mouseEvent) {
-        dollar5.setVisible(false);
-        label5.setVisible(false);
-        tick5.setVisible(true);
-        backgroundMask5.setFill(null);
-        backgroundMask5.setStroke(null);
-        buy5.setImage(null);
-        if (pomoc5 < 1) { peniaze -= 150;}
+    public void buyButton5(MouseEvent mouseEvent) throws IOException{
+        buyButtonBall(dollar5, label5, tick5, backgroundMask5, buy5);
+        if (pomoc[4] < 1) { peniaze -= 150;}
         money.setText(""+peniaze);
-        pomoc5++;
+        pomoc[4]++;
     }
 
-    public void buyButton6(MouseEvent mouseEvent) {
-        dollar6.setVisible(false);
-        label6.setVisible(false);
-        tick6.setVisible(true);
-        backgroundMask6.setFill(null);
-        backgroundMask6.setStroke(null);
-        buy6.setImage(null);
-        if (pomoc6 < 1) { peniaze -= 150;}
+    public void buyButton6(MouseEvent mouseEvent) throws IOException{
+        buyButtonBall(dollar6, label6, tick6, backgroundMask6, buy6);
+        if (pomoc[5] < 1) { peniaze -= 150;}
         money.setText(""+peniaze);
-        pomoc6++;
+        pomoc[5]++;
     }
+
 }
