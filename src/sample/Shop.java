@@ -1,16 +1,17 @@
 package sample;
 
+import javafx.collections.FXCollections;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.shape.Circle;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+
+import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -49,6 +50,20 @@ public class Shop implements Initializable {
     public ImageView tick6;
     public ImageView dollar6;
     public Label label6;
+    public ImageView pF;
+    public ImageView pB;
+    public ImageView pV;
+    public ImageView lF;
+    public ImageView lB;
+    public ImageView lV;
+
+
+    String dlzkaHry;
+    String obtiaznost;
+    String pozadie;
+    String lopta;
+    String odomknutePozadia;
+    String odomknuteLopty;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -57,14 +72,248 @@ public class Shop implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        //nastavenie zobrazenia pozadi, ktore mame uz kupene
+        if (odomknutePozadia.equals("000")){
+            pF.setVisible(true);
+            pB.setVisible(true);
+            pV.setVisible(true);
+            tick1.setVisible(false);
+            tick2.setVisible(false);
+            tick3.setVisible(false);
+            label1.setVisible(true);
+            label2.setVisible(true);
+            label3.setVisible(true);
+            dollar1.setVisible(true);
+            dollar2.setVisible(true);
+            dollar3.setVisible(true);
+        }
+        if (odomknutePozadia.equals("100")){
+            pF.setVisible(false);
+            pB.setVisible(true);
+            pV.setVisible(true);
+            tick1.setVisible(true);
+            tick2.setVisible(false);
+            tick3.setVisible(false);
+            label1.setVisible(false);
+            label2.setVisible(true);
+            label3.setVisible(true);
+            dollar1.setVisible(false);
+            dollar2.setVisible(true);
+            dollar3.setVisible(true);
+
+        }
+        if (odomknutePozadia.equals("110")){
+            pF.setVisible(false);
+            pB.setVisible(false);
+            pV.setVisible(true);
+            tick1.setVisible(true);
+            tick2.setVisible(true);
+            tick3.setVisible(false);
+            label1.setVisible(false);
+            label2.setVisible(false);
+            label3.setVisible(true);
+            dollar1.setVisible(false);
+            dollar2.setVisible(false);
+            dollar3.setVisible(true);
+        }
+        if (odomknutePozadia.equals("111")){
+            pF.setVisible(false);
+            pB.setVisible(false);
+            pV.setVisible(false);
+            tick1.setVisible(true);
+            tick2.setVisible(true);
+            tick3.setVisible(true);
+            label1.setVisible(false);
+            label2.setVisible(false);
+            label3.setVisible(false);
+            dollar1.setVisible(false);
+            dollar2.setVisible(false);
+            dollar3.setVisible(false);
+        }
+        if (odomknutePozadia.equals("010")){
+            pF.setVisible(true);
+            pB.setVisible(false);
+            pV.setVisible(true);
+            tick1.setVisible(false);
+            tick2.setVisible(true);
+            tick3.setVisible(false);
+            label1.setVisible(true);
+            label2.setVisible(false);
+            label3.setVisible(true);
+            dollar1.setVisible(true);
+            dollar2.setVisible(false);
+            dollar3.setVisible(true);
+        }
+        if (odomknutePozadia.equals("011")){
+            pF.setVisible(true);
+            pB.setVisible(false);
+            pV.setVisible(false);
+            tick1.setVisible(false);
+            tick2.setVisible(true);
+            tick3.setVisible(true);
+            label1.setVisible(true);
+            label2.setVisible(false);
+            label3.setVisible(false);
+            dollar1.setVisible(true);
+            dollar2.setVisible(false);
+            dollar3.setVisible(false);
+        }
+        if (odomknutePozadia.equals("001")){
+            pF.setVisible(true);
+            pB.setVisible(true);
+            pV.setVisible(false);
+            tick1.setVisible(false);
+            tick2.setVisible(false);
+            tick3.setVisible(true);
+            label1.setVisible(true);
+            label2.setVisible(true);
+            label3.setVisible(false);
+            dollar1.setVisible(true);
+            dollar2.setVisible(true);
+            dollar3.setVisible(false);
+        }
+        if (odomknutePozadia.equals("101")){
+            pF.setVisible(false);
+            pB.setVisible(true);
+            pV.setVisible(false);
+            tick1.setVisible(true);
+            tick2.setVisible(false);
+            tick3.setVisible(true);
+            label1.setVisible(false);
+            label2.setVisible(true);
+            label3.setVisible(false);
+            dollar1.setVisible(false);
+            dollar2.setVisible(true);
+            dollar3.setVisible(false);
+        }
+
+        //nastavenie zobrazenia lopt, ktore mame uz kupene
+        if (odomknuteLopty.equals("000")){
+            lF.setVisible(true);
+            lB.setVisible(true);
+            lV.setVisible(true);
+            tick4.setVisible(false);
+            tick5.setVisible(false);
+            tick6.setVisible(false);
+            label4.setVisible(true);
+            label5.setVisible(true);
+            label6.setVisible(true);
+            dollar4.setVisible(true);
+            dollar5.setVisible(true);
+            dollar6.setVisible(true);
+        }
+        if (odomknuteLopty.equals("100")){
+            lF.setVisible(false);
+            lB.setVisible(true);
+            lV.setVisible(true);
+            tick4.setVisible(true);
+            tick5.setVisible(false);
+            tick6.setVisible(false);
+            label4.setVisible(false);
+            label5.setVisible(true);
+            label6.setVisible(true);
+            dollar4.setVisible(false);
+            dollar5.setVisible(true);
+            dollar6.setVisible(true);
+        }
+        if (odomknuteLopty.equals("110")){
+            lF.setVisible(false);
+            lB.setVisible(false);
+            lV.setVisible(true);
+            tick4.setVisible(true);
+            tick5.setVisible(true);
+            tick6.setVisible(false);
+            label4.setVisible(false);
+            label5.setVisible(false);
+            label6.setVisible(true);
+            dollar4.setVisible(false);
+            dollar5.setVisible(false);
+            dollar6.setVisible(true);
+        }
+        if (odomknuteLopty.equals("111")){
+            lF.setVisible(false);
+            lB.setVisible(false);
+            lV.setVisible(false);
+            tick4.setVisible(true);
+            tick5.setVisible(true);
+            tick6.setVisible(true);
+            label4.setVisible(false);
+            label5.setVisible(false);
+            label6.setVisible(false);
+            dollar4.setVisible(false);
+            dollar5.setVisible(false);
+            dollar6.setVisible(false);
+        }
+        if (odomknuteLopty.equals("010")){
+            lF.setVisible(true);
+            lB.setVisible(false);
+            lV.setVisible(true);
+            tick4.setVisible(false);
+            tick5.setVisible(true);
+            tick6.setVisible(false);
+            label4.setVisible(true);
+            label5.setVisible(false);
+            label6.setVisible(true);
+            dollar4.setVisible(true);
+            dollar5.setVisible(false);
+            dollar6.setVisible(true);
+        }
+        if (odomknuteLopty.equals("011")){
+            lF.setVisible(true);
+            lB.setVisible(false);
+            lV.setVisible(false);
+            tick4.setVisible(false);
+            tick5.setVisible(true);
+            tick6.setVisible(true);
+            label4.setVisible(true);
+            label5.setVisible(false);
+            label6.setVisible(false);
+        }
+        if (odomknuteLopty.equals("001")){
+            lF.setVisible(true);
+            lB.setVisible(true);
+            lV.setVisible(false);
+            tick4.setVisible(false);
+            tick5.setVisible(false);
+            tick6.setVisible(true);
+            label4.setVisible(true);
+            label5.setVisible(true);
+            label6.setVisible(false);
+            dollar4.setVisible(true);
+            dollar5.setVisible(true);
+            dollar6.setVisible(false);
+        }
+        if (odomknuteLopty.equals("101")){
+            lF.setVisible(false);
+            lB.setVisible(true);
+            lV.setVisible(false);
+            tick4.setVisible(true);
+            tick5.setVisible(false);
+            tick6.setVisible(true);
+            label4.setVisible(false);
+            label5.setVisible(true);
+            label6.setVisible(false);
+            dollar4.setVisible(false);
+            dollar5.setVisible(true);
+            dollar6.setVisible(false);
+        }
+
     }
 
     public void load() throws IOException {
         BufferedReader br = new BufferedReader(new FileReader("peniaze.txt"));
         peniaze = Integer.parseInt(br.readLine());
-        money.setText(""+peniaze);
-    }
+        money.setText("" + peniaze);
 
+        BufferedReader br2 = new BufferedReader(new FileReader("nastavenia.txt"));
+        dlzkaHry = br2.readLine();
+        obtiaznost = br2.readLine();
+        pozadie = br2.readLine();
+        lopta = br2.readLine();
+        odomknutePozadia = br2.readLine();
+        odomknuteLopty = br2.readLine();
+    }
 
     public void back(MouseEvent mouseEvent) throws IOException {
         BorderPane pane = FXMLLoader.load(getClass().getResource("layout/menu.fxml"));
@@ -160,6 +409,8 @@ public class Shop implements Initializable {
         buy5.setVisible(false);
         buy6.setVisible(true);
     }
+
+
     public void buyButton(ImageView dollar, Label label, ImageView tick, AnchorPane backgroundMask, ImageView buy)throws IOException{
         dollar.setVisible(false); label.setVisible(false); tick.setVisible(true); backgroundMask.setBackground(null); buy.setImage(null);
     }
@@ -208,5 +459,4 @@ public class Shop implements Initializable {
         money.setText(""+peniaze);
         pomoc[5]++;
     }
-
 }
