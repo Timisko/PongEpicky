@@ -419,44 +419,105 @@ public class Shop implements Initializable {
     }
 
     public void buyButton1(MouseEvent mouseEvent) throws IOException {
-        buyButton(dollar1, label1, tick1, backgroundMask1, buy1);
-        if (pomoc[0] < 1) { peniaze -= 150;}
-        money.setText(""+peniaze);
-        pomoc[0]++;
+        if (pomoc[0] < 1 && peniaze>=150) {
+            buyButton(dollar1, label1, tick1, backgroundMask1, buy1);
+            peniaze -= 150;
+            money.setText(""+peniaze);
+            pomoc[0]++;
+            ZapisPozadia(100);}
     }
 
     public void buyButton2(MouseEvent mouseEvent) throws IOException{
-        buyButton(dollar2, label2, tick2, backgroundMask2, buy2);
-        if (pomoc[1] < 1) { peniaze -= 150;}
-        money.setText(""+peniaze);
-        pomoc[1]++;
+        if (pomoc[1] < 1 && peniaze>=150) {
+            buyButton(dollar2, label2, tick2, backgroundMask2, buy2);
+            peniaze -= 150;
+            money.setText(""+peniaze);
+            pomoc[1]++;
+            ZapisPozadia(10);}
     }
 
     public void buyButton3(MouseEvent mouseEvent) throws IOException{
-        buyButton(dollar3, label3, tick3, backgroundMask3, buy3);
-        if (pomoc[2] < 1) { peniaze -= 150;}
-        money.setText(""+peniaze);
-        pomoc[2]++;
+        if (pomoc[2] < 1 && peniaze>=150) {
+            buyButton(dollar3, label3, tick3, backgroundMask3, buy3);
+            peniaze -= 150;
+            money.setText(""+peniaze);
+            pomoc[2]++;
+            ZapisPozadia(1);}
     }
 
     public void buyButton4(MouseEvent mouseEvent) throws IOException{
-        buyButtonBall(dollar4, label4, tick4, backgroundMask4, buy4);
-        if (pomoc[3] < 1) { peniaze -= 150;}
-        money.setText(""+peniaze);
-        pomoc[3]++;
+        if (pomoc[3] < 1 && peniaze>=150) {
+            buyButtonBall(dollar4, label4, tick4, backgroundMask4, buy4);
+            peniaze -= 150;
+            money.setText(""+peniaze);
+            pomoc[3]++;
+            ZapisLopty(100);}
     }
 
     public void buyButton5(MouseEvent mouseEvent) throws IOException{
-        buyButtonBall(dollar5, label5, tick5, backgroundMask5, buy5);
-        if (pomoc[4] < 1) { peniaze -= 150;}
-        money.setText(""+peniaze);
-        pomoc[4]++;
+        if (pomoc[4] < 1 && peniaze>=150) {
+            buyButtonBall(dollar5, label5, tick5, backgroundMask5, buy5);
+            peniaze -= 150;
+            money.setText(""+peniaze);
+            pomoc[4]++;
+            ZapisLopty(10);}
     }
 
     public void buyButton6(MouseEvent mouseEvent) throws IOException{
-        buyButtonBall(dollar6, label6, tick6, backgroundMask6, buy6);
-        if (pomoc[5] < 1) { peniaze -= 150;}
-        money.setText(""+peniaze);
-        pomoc[5]++;
+        if (pomoc[5] < 1 && peniaze>=150) {
+            buyButtonBall(dollar6, label6, tick6, backgroundMask6, buy6);
+            peniaze -= 150;
+            money.setText(""+peniaze);
+            pomoc[5]++;
+            ZapisLopty(1);}
+    }
+
+    public void ZapisPozadia(int n) throws IOException {
+        String[]odomknute=odomknutePozadia.split("");
+        if (n==100){odomknutePozadia="1"+odomknute[1]+""+odomknute[2];}
+        if (n==10){odomknutePozadia=odomknute[0]+"1"+odomknute[2];}
+        if (n==1){odomknutePozadia=odomknute[0]+""+odomknute[1]+"1";}
+        BufferedWriter bout = new BufferedWriter(new FileWriter("nastavenia.txt"));
+        BufferedWriter out = new BufferedWriter(new FileWriter("peniaze.txt"));
+
+        out.write(peniaze);
+
+        bout.write(dlzkaHry);
+        bout.newLine();
+        bout.write(obtiaznost);
+        bout.newLine();
+        bout.write(pozadie);
+        bout.newLine();
+        bout.write(lopta);
+        bout.newLine();
+        bout.write(odomknutePozadia);
+        bout.newLine();
+        bout.write(odomknuteLopty);
+        bout.close();
+    }
+    public void ZapisLopty(int n) throws IOException {
+        String[]odomknute=odomknuteLopty.split("");
+        if (n==100){odomknuteLopty="1"+odomknute[1]+""+odomknute[2];}
+        if (n==10){odomknuteLopty=odomknute[0]+"1"+odomknute[2];}
+        if (n==1){odomknuteLopty=odomknute[0]+""+odomknute[1]+"1";}
+
+        System.out.println(odomknutePozadia);
+        BufferedWriter bout = new BufferedWriter(new FileWriter("nastavenia.txt"));
+        BufferedWriter out = new BufferedWriter(new FileWriter("peniaze.txt"));
+
+        out.write(peniaze);
+
+        bout.write(dlzkaHry);
+        bout.newLine();
+        bout.write(obtiaznost);
+        bout.newLine();
+        bout.write(pozadie);
+        bout.newLine();
+        bout.write(lopta);
+        bout.newLine();
+        bout.write(odomknutePozadia);
+        bout.newLine();
+        bout.write(odomknuteLopty);
+        bout.close();
     }
 }
