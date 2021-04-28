@@ -36,30 +36,30 @@
             <Font name="Comic Sans MS" size="30.0" />
          </font>
       </Text>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="50.0" layoutY="170.0" onMouseClicked="#background1" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="pF" fitHeight="150.0" fitWidth="200.0" layoutX="50.0" layoutY="170.0" onMouseClicked="#background1" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../res/fPozadie.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="140.0" fitWidth="243.0" layoutX="279.0" layoutY="170.0" onMouseClicked="#background2" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="pB" fitHeight="140.0" fitWidth="243.0" layoutX="279.0" layoutY="170.0" onMouseClicked="#background2" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../res/bPozadie.jpg" />
          </image></ImageView>
-      <ImageView fitHeight="140.0" fitWidth="211.0" layoutX="550.0" layoutY="170.0" onMouseClicked="#background3" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="pV" fitHeight="140.0" fitWidth="211.0" layoutX="550.0" layoutY="170.0" onMouseClicked="#background3" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../res/vPozadie.jpg" />
          </image></ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="72.0" layoutY="392.0" onMouseClicked="#background4" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="lF" fitHeight="150.0" fitWidth="200.0" layoutX="72.0" layoutY="392.0" onMouseClicked="#background4" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../res/fLopta.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="325.0" layoutY="392.0" onMouseClicked="#background5" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="lB" fitHeight="150.0" fitWidth="200.0" layoutX="325.0" layoutY="392.0" onMouseClicked="#background5" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../res/bLopta.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="581.0" layoutY="392.0" onMouseClicked="#background6" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="lV" fitHeight="150.0" fitWidth="200.0" layoutX="581.0" layoutY="392.0" onMouseClicked="#background6" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../res/vLopta.png" />
          </image>
