@@ -17,6 +17,8 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -29,6 +31,7 @@ public class VersusGame implements Initializable {
     public AnchorPane koniec;
     public Label vitaz;
     public ImageView pauseTlacitko;
+    public ImageView pozadie;
 
     @FXML
     AnchorPane panel;
@@ -61,17 +64,83 @@ public class VersusGame implements Initializable {
     static int Pos1Y = 0;
     static int Pos2Y = 0;
 
+    int vitazneGoly = 5;
+    String pozadieCesta = "";
+    String loptaCesta = "";
+
     static boolean pokracuj = true;
 
     int speedX = 2;
     int speedY = 2;
 
+    public void load() throws IOException {
+
+        BufferedReader br = new BufferedReader(new FileReader("nastavenia.txt"));
+
+        while (true){
+            String s = br.readLine();
+
+            if (s == null)
+                break;
+
+            //dlzka hry
+            if (s.equals("5")){
+                vitazneGoly = 5;
+            }
+            if (s.equals("10")){
+                vitazneGoly = 10;
+            }
+
+
+            //pozadie
+            if (s.equals("pC")){
+                pozadieCesta = "res/cPozadie.jpg";
+            }
+            if (s.equals("pF")){
+                pozadieCesta = "res/fPozadie.jpg";
+            }
+            if (s.equals("pB")){
+                pozadieCesta = "res/bPozadie.jpg";
+            }
+            if (s.equals("pV")){
+                pozadieCesta = "res/vPozadie.jpg";
+            }
+
+            //lopta
+            if (s.equals("lC")){
+                loptaCesta = "res/cLopta.png";
+            }
+            if (s.equals("lF")){
+                loptaCesta = "res/fLopta.png";
+            }
+            if (s.equals("lB")) {
+                loptaCesta = "res/bLopta.png";
+            }
+            if (s.equals("lV")) {
+                loptaCesta = "res/vLopta.png";
+            }
+        }
+
+        br.close();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        try {
+            load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         /*
         lopta.setFill(new ImagePattern(new Image(Game.class.getResourceAsStream("res/fLopta.png"))));*/
 
+        pozadie.setImage(new Image(Game.class.getResourceAsStream(pozadieCesta)));
+
+        //lopta image
+        lopta.setFill(new ImagePattern(new Image(Game.class.getResourceAsStream(loptaCesta))));
+        
         new AnimationTimer() {
             final long period = 20000000;
             long lastSampleTime = System.nanoTime();
