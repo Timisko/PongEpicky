@@ -28,7 +28,6 @@ public class VersusGame implements Initializable {
     Random rd = new Random();
 
     public Label skore;
-    public Label money;
     public AnchorPane pause;
     public BorderPane menu;
     public AnchorPane koniec;
@@ -45,10 +44,8 @@ public class VersusGame implements Initializable {
     @FXML
     Rectangle Right;
 
-    public int peniaze = 0;
-
     private final int sirkaHrac = 10;
-    private final int vyskaHrac = 70;
+    private final double vyskaHrac = 70.0;
 
     private double startY = 215;
 
@@ -183,10 +180,52 @@ public class VersusGame implements Initializable {
                                         || ((lopta.getLayoutX() < leftX) && (lopta.getLayoutY() >= Left.getLayoutY()) &&
                                         (lopta.getLayoutY() <= Left.getLayoutY() + vyskaHrac))) {
 
-                            speedX += 1 * Math.signum(speedX);
+
+                            //odrazanie od stredu Prava
+                            if (lopta.getLayoutY() >= (Right.getLayoutY() + (vyskaHrac / 3))  &&
+                                    lopta.getLayoutY() <= (Right.getLayoutY() + (2 * (vyskaHrac / 3))) ){
+                                speedY = 0;
+                            }
+
+                            //odrazanie od stredu Lava
+                            if (lopta.getLayoutY() >= (Left.getLayoutY() + (vyskaHrac / 3))  &&
+                                    lopta.getLayoutY() <= (Left.getLayoutY() + (2 * (vyskaHrac / 3))) ){
+                                speedY = 0;
+                            }
+
+                            //odrazanie od vrchu Prava
+                            if (lopta.getLayoutY() >= Right.getLayoutY() &&
+                                    lopta.getLayoutY() <= (Right.getLayoutY() + (vyskaHrac / 3))) {
+                                speedY = -2;
+                            }
+
+                            //odrazanie od vrchu Lava
+                            if (lopta.getLayoutY() >= Left.getLayoutY() &&
+                                    lopta.getLayoutY() <= (Left.getLayoutY() + (vyskaHrac / 3))) {
+                                speedY = -2;
+                            }
+
+                            //odrazanie od spodu Prava
+                            if (lopta.getLayoutY() >= Right.getLayoutY() + (2 * (vyskaHrac / 3)) &&
+                                    lopta.getLayoutY() <= (Right.getLayoutY() + vyskaHrac)) {
+                                speedY = 2;
+                            }
+
+                            //odrazanie od vrchu Lava
+                            if (lopta.getLayoutY() >= Left.getLayoutY() + (2 * (vyskaHrac / 3)) &&
+                                    lopta.getLayoutY() <= (Left.getLayoutY() + vyskaHrac)) {
+                                speedY = 2;
+                            }
+
+                            //otocenie x
                             speedX *= -1;
+
+                            //zrychlenie x
+                            speedX += 1 * Math.signum(speedX);
+
+                            //zrychlenie y
                             speedY += 1 * Math.signum(speedY);
-                            speedY *= -1;
+
                         }
 
                         //ked sa lopta dotkne vrchu alebo spodku obrazovky zmeni uhol
