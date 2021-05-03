@@ -21,9 +21,12 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 public class VersusGame implements Initializable {
+    Random rd = new Random();
+
     public Label skore;
     public Label money;
     public AnchorPane pause;
@@ -70,11 +73,12 @@ public class VersusGame implements Initializable {
 
     static boolean pokracuj = true;
 
-    int speedX = 2;
-    int speedY = 2;
+    int speedX;
+    int speedY;
+
+    int [] zaciatok = {2, -2};
 
     public void load() throws IOException {
-
         BufferedReader br = new BufferedReader(new FileReader("nastavenia.txt"));
 
         while (true){
@@ -126,20 +130,21 @@ public class VersusGame implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         try {
             load();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        /*
-        lopta.setFill(new ImagePattern(new Image(Game.class.getResourceAsStream("res/fLopta.png"))));*/
-
+        //nastavenie pozadia
         pozadie.setImage(new Image(Game.class.getResourceAsStream(pozadieCesta)));
 
         //lopta image
         lopta.setFill(new ImagePattern(new Image(Game.class.getResourceAsStream(loptaCesta))));
+
+        //nahodny vyber smeru lopty na zaciatku hry
+        speedX = zaciatok[rd.nextInt(2)];
+        speedY = zaciatok[rd.nextInt(2)];
         
         new AnimationTimer() {
             final long period = 20000000;
@@ -187,38 +192,46 @@ public class VersusGame implements Initializable {
                         //ked sa lopta dotkne vrchu alebo spodku obrazovky zmeni uhol
                         if (lopta.getLayoutY() + 10 > HEIGHT || lopta.getLayoutY() - 10 < 0) speedY *= -1;
 
-                        //ak hrac skoruje
-                        if (lopta.getLayoutX() < leftX - sirkaHrac) {
+                        //ak pocitac skoruje
+                        if (lopta.getLayoutX() < leftX - lopta.getRadius()) {
                             bodyPocitac++;
                             lopta.setLayoutX(loptaX);
                             lopta.setLayoutY(loptaY);
                             Right.setLayoutY(startY);
                             Left.setLayoutY(startY);
-                            speedX = 2;
-                            speedY = 2;
+
+                            //nahodny vyber smeru lopty na zaciatku hry
+                            speedX = zaciatok[rd.nextInt(2)];
+                            speedY = zaciatok[rd.nextInt(2)];
+
                             skore.setText(bodyHrac + " : " + bodyPocitac);
                         }
 
                         //ak hrac skoruje
-                        if (lopta.getLayoutX() > rightX + sirkaHrac) {
+                        if (lopta.getLayoutX() > rightX + lopta.getRadius()) {
                             bodyHrac++;
                             lopta.setLayoutX(loptaX);
                             lopta.setLayoutY(loptaY);
                             Right.setLayoutY(startY);
                             Left.setLayoutY(startY);
-                            speedX = 2;
-                            speedY = 2;
+
+                            //nahodny vyber smeru lopty na zaciatku hry
+                            speedX = zaciatok[rd.nextInt(2)];
+                            speedY = zaciatok[rd.nextInt(2)];
+
                             skore.setText(bodyHrac + " : " + bodyPocitac);
                         }
 
-                        if (bodyHrac == 5){
+                        //ukoncenie hry ak vyhra hrac 1
+                        if (bodyHrac == vitazneGoly){
                             stop();
                             pauseTlacitko.setVisible(false);
                             vitaz.setText("Vyhral hráč číslo 1");
                             koniec.setVisible(true);
                         }
 
-                        if (bodyPocitac == 5){
+                        //ukoncenie hry ak vyhra hrac 2
+                        if (bodyPocitac == vitazneGoly){
                             stop();
                             pauseTlacitko.setVisible(false);
                             vitaz.setText("Vyhral hráč číslo 2");
@@ -247,8 +260,8 @@ public class VersusGame implements Initializable {
     }
 
     public void back(ActionEvent actionEvent) throws IOException {
-        pokracuj = true;
         BorderPane pane = FXMLLoader.load(getClass().getResource("layout/menu.fxml"));
         menu.getChildren().setAll(pane);
+        pokracuj = true;
     }
 }
